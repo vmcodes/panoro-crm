@@ -1,0 +1,51 @@
+# README
+
+## Running
+
+Run the project by calling `npm run-script run`.
+
+## Project structure
+
+All the files names are in **PascalCase**, while the folders names are in **snake_case**.
+
+-   **src** - all the project source files are placed here
+    -   **components** - the React components that are components part of one page;
+    -   **pages** - the React pages composed of multiple **components**;
+    -   **styles** - the SASS style files where the name;
+        -   **components** - the style files for the components files where the name of the file is the name of the component;
+        -   **pages** - the style files for the pages files where the name of the file is the name of the component;
+        -   **global.scss** - the global style file that is imported in **App.tsx**;
+    -   **modules** - multiple parts of the application;
+        -   **...[module name]**
+            -   **components** - the React components that are components part of one page;
+            -   **pages** - the React pages composed of multiple **components**;
+            -   **styles** - the SASS style files where the name;
+                -   **components** - the style files for the components files where the name of the file is the name of the component;
+                -   **pages** - the style files for the pages files where the name of the file is the name of the component;
+    -   **App.tsx** - the main React component file that is rendered from **run.tsx**;
+    -   **index.ejs** - the HTML main file;
+    -   **run.tsx** - the main file that run the project.
+-   **tmp** - temporary files
+
+## File structure
+
+### React components & pages
+
+-   the React components and pages should be defined as classes;
+-   the React components and pages classes should be exported as default.
+
+### SCSS styles
+
+-   the name of the classes are in **kebab-case**;
+-   the name of the IDs are in **PascalCase**.
+
+## Packages used
+
+-   **ReactJS**
+-   **SASS**
+-   **TailwindCSS**
+
+### Compiling & building
+
+-   **Babel**
+-   **Webpack**

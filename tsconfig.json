@@ -1,0 +1,21 @@
+{
+    "include": ["src", "dummy_api_server"],
+    "compilerOptions": {
+        "target": "ES2015",
+        "jsx": "react",
+        "allowJs": false,
+        "outDir": "./dist",
+        "rootDir": "src",
+        "baseUrl": ".",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "experimentalDecorators": true,
+        "declaration": true,
+        "sourceMap": true,
+        "skipLibCheck": true /* Skip type checking of declaration files. */,
+        "esModuleInterop": true,
+        "paths": {},
+        "allowSyntheticDefaultImports": true
+    },
+    "references": []
+}
