@@ -1,5 +1,7 @@
 # README
 
+Also read the **TASKS.md** file for the job's tasks.
+
 ## Running
 
 Run the project by calling `npm run-script run`.
@@ -8,7 +10,7 @@ Run the project by calling `npm run-script run`.
 
 All the files names are in **PascalCase**, while the folders names are in **snake_case**.
 
--   **src** - all the project source files are placed here
+-   **src** - all the project source files are placed here;
     -   **components** - the React components that are components part of one page;
     -   **pages** - the React pages composed of multiple **components**;
     -   **styles** - the SASS style files where the name;
@@ -24,8 +26,17 @@ All the files names are in **PascalCase**, while the folders names are in **snak
                 -   **pages** - the style files for the pages files where the name of the file is the name of the component;
     -   **App.tsx** - the main React component file that is rendered from **run.tsx**;
     -   **index.ejs** - the HTML main file;
-    -   **run.tsx** - the main file that run the project.
--   **tmp** - temporary files
+    -   **run.tsx** - the main file that run the project;
+-   **tmp** - temporary files;
+-   **.gitignore** - the Git ignore filel
+-   **.prettierrc.json** - the Prettier configuration file;
+-   **package.json** - the NPM package configuration;
+-   **README.md** - this file
+-   **tailwind.config.ts** - the TailwindCSS configuration file;
+-   **TASKS.md** - the job tasks;
+-   **tsconfig.build.json** - the build TypeScript configuration file;
+-   **tsconfig.json** - the general TypeScript configuration file;
+-   **webpack.config.ts** - the Webpack configuration file.
 
 ## File structure
 
