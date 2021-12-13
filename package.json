@@ -1,5 +1,5 @@
 {
-    "name": "freelancers-softprovider-react-template",
+    "name": "@softprovider/freelancers-react-template",
     "version": "0.0.1",
     "description": "",
     "main": "dist/index.js",
