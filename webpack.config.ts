@@ -45,6 +45,8 @@ const DefinePluginArgs = {
     },
 };
 
+console.log("process.env.DUMMY_API_SERVER_PORT", process.env.DUMMY_API_SERVER_PORT);
+
 const plugins = [
     new webpack.DefinePlugin(DefinePluginArgs),
     ...extraPlugins,
@@ -217,5 +219,8 @@ module.exports = {
         port: 3000,
         hot: true,
         historyApiFallback: true,
+        proxy: {
+            '/api': `http://localhost:${process.env.DUMMY_API_SERVER_PORT}`
+        }
     },
 };

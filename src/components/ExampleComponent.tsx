@@ -1,4 +1,6 @@
 //= Functions & Modules
+// Own
+import fetch from "../utils/fetch";
 // Others
 import React from "react";
 import {boundMethod} from 'autobind-decorator';
@@ -17,9 +19,13 @@ type Props = {
  * @prop {String} label - the label of the button
  */
 export default class ExampleComponent extends React.PureComponent<Props> {
+
+
     @boundMethod
-    showAlert() {
-        alert("This is an alert");
+    async showAlert() {
+        const result = await fetch("/api/example-get", { method: "GET" });
+
+        alert(JSON.stringify(result));
     }
 
     render() {
