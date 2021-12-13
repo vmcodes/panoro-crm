@@ -17,6 +17,9 @@ type Props = {
  * @prop {String} label - the label of the button
  */
 export default class ExampleComponent extends React.PureComponent<Props> {
+    /**
+     * Shows an alert
+     */
     @boundMethod
     showAlert() {
         alert("This is an alert");

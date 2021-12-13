@@ -24,6 +24,8 @@ All the files names are in **PascalCase**, while the folders names are in **snak
             -   **styles** - the SASS style files where the name;
                 -   **components** - the style files for the components files where the name of the file is the name of the component;
                 -   **pages** - the style files for the pages files where the name of the file is the name of the component;
+            -   **utils** - the module utility functions files;
+    -   **utils** - the directory containing all the general utility function files;
     -   **App.tsx** - the main React component file that is rendered from **run.tsx**;
     -   **index.ejs** - the HTML main file;
     -   **run.tsx** - the main file that run the project;
