@@ -11,4 +11,4 @@
 
 ## Specific
 
--   To add
+-   Checking on client-side if the username or password is wrong on the Login page;
