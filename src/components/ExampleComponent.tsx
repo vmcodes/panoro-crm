@@ -19,8 +19,9 @@ type Props = {
  * @prop {String} label - the label of the button
  */
 export default class ExampleComponent extends React.PureComponent<Props> {
-
-
+    /**
+     * Shows an alert
+     */
     @boundMethod
     async showAlert() {
         const result = await fetch("/api/example-get", { method: "GET" });
