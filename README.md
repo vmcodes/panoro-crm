@@ -45,8 +45,8 @@ All the files names are in **PascalCase**, while the folders names are in **snak
 
 ### React components & pages
 
--   the React components and pages should be defined as classes;
--   the React components and pages classes should be exported as default.
+-   the React components and pages should be defined as functional components;
+-   the React components and pages should be exported as default.
 
 ### SCSS styles
 

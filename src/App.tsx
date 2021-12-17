@@ -13,14 +13,12 @@ import './styles/global.scss';
 /**
  * The main rendered React component
  */
-export default class App extends React.PureComponent {
-    render() {
-        return (
-            <div>
-                <h1>Works</h1>
-                <ExamplePage/>
-            </div>
-        );
-    }
+export default function App() {
+    return (
+        <div>
+            <h1>Works</h1>
+            <ExamplePage/>
+        </div>
+    );
 }
 
