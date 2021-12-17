@@ -1,7 +1,6 @@
 //= Functions & Modules
 // Others
 import React from "react";
-import {boundMethod} from 'autobind-decorator';
 
 //= Style & Assets
 // Own
@@ -16,16 +15,10 @@ type Props = {
  *
  * @prop {String} label - the label of the button
  */
-export default class ExampleComponent extends React.PureComponent<Props> {
-    /**
-     * Shows an alert
-     */
-    @boundMethod
-    showAlert() {
+export default function ExampleComponent({ label }: Props) {
+    const showAlert = () => {
         alert("This is an alert");
     }
 
-    render() {
-        return <button onClick={this.showAlert} className="example-button">{this.props.label}</button>
-    }
+    return <button onClick={showAlert} className="example-button">{label}</button>
 }
