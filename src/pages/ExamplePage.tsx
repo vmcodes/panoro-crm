@@ -13,13 +13,11 @@ import "../styles/pages/ExamplePage.scss";
 /**
  * Example page that can be deleted
  */
-export default class ExamplePage extends React.PureComponent {
-    render() {
-        return (
-            <div id="ExamplePage">
-                <ExampleComponent label="Show an alert"/>
-            </div>
-        );
-    }
+export default function ExamplePage() {
+    return (
+        <div id="ExamplePage">
+            <ExampleComponent label="Show an alert"/>
+        </div>
+    );
 }
 

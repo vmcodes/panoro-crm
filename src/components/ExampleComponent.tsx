@@ -3,7 +3,6 @@
 import fetch from "../utils/fetch";
 // Others
 import React from "react";
-import {boundMethod} from 'autobind-decorator';
 
 //= Style & Assets
 // Own
@@ -18,18 +17,12 @@ type Props = {
  *
  * @prop {String} label - the label of the button
  */
-export default class ExampleComponent extends React.PureComponent<Props> {
-    /**
-     * Shows an alert
-     */
-    @boundMethod
-    async showAlert() {
+export default function ExampleComponent({ label }: Props) {
+    const showAlert = async () => {
         const result = await fetch("/api/example-get", { method: "GET" });
 
         alert(JSON.stringify(result));
     }
 
-    render() {
-        return <button onClick={this.showAlert} className="example-button">{this.props.label}</button>
-    }
+    return <button onClick={showAlert} className="example-button">{label}</button>
 }

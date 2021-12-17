@@ -5,7 +5,7 @@
         "jsx": "react",
         "allowJs": false,
         "outDir": "./dist",
-        "rootDir": "src",
+        "rootDir": ".",
         "baseUrl": ".",
         "module": "CommonJS",
         "moduleResolution": "Node",
