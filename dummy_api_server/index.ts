@@ -61,4 +61,4 @@ app.get("/api/modules", (_req, res) => {
     res.json(MODULES);
 });
 
-app.listen(process.env.DUMMY_API_SERVER_PORT);
+app.listen(process.env.DUMMY_API_SERVER_PORT || 3001);

@@ -220,7 +220,7 @@ module.exports = {
         hot: true,
         historyApiFallback: true,
         proxy: {
-            '/api': `http://localhost:${process.env.DUMMY_API_SERVER_PORT}`
+            '/api': `http://localhost:${process.env.DUMMY_API_SERVER_PORT || 3001}`
         }
     },
 };
