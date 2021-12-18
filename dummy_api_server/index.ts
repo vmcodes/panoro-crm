@@ -40,17 +40,17 @@ app.post("/api/login", (req, res) => {
 
 app.post("/api/register", (req, res) => {
     if (!req.body.username) {
-        res.status(400).json("Username is missing");
+        res.status(400).json({ field: "username", error: "Username is missing" });
         return;
     }
 
     if (!req.body.password) {
-        res.status(400).json("Passwors is missing");
+        res.status(400).json({ field: "password", error: "Passwors is missing" });
         return;
     }
 
     if (req.body.username == LOGIN_USER.username) {
-        res.status(400).json("Username is already taken");
+        res.status(400).json({ field: "username", error: "Username is already taken" });
         return;
     }
 

@@ -13,6 +13,8 @@ All the files names are in **PascalCase**, while the folders names are in **snak
 -   **dummy_api_server** - the source for the dummy API server;
 -   **src** - all the project source files are placed here;
     -   **components** - the React components that are components part of one page;
+    -   **data** - files containing no functionality, only constant data and structures;
+        -   **MinimumPasswordLength.ts** - the number of minimum characters a password must contain;
     -   **pages** - the React pages composed of multiple **components**;
     -   **styles** - the SASS style files where the name;
         -   **components** - the style files for the components files where the name of the file is the name of the component;
@@ -27,6 +29,7 @@ All the files names are in **PascalCase**, while the folders names are in **snak
                 -   **pages** - the style files for the pages files where the name of the file is the name of the component;
             -   **utils** - the module utility functions files;
     -   **utils** - the directory containing all the general utility function files;
+        -   **fetch.ts** - Fetch function for fetching `application/json` requests;
     -   **App.tsx** - the main React component file that is rendered from **run.tsx**;
     -   **index.ejs** - the HTML main file;
     -   **run.tsx** - the main file that run the project;

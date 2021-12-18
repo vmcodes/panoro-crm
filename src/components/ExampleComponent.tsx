@@ -19,7 +19,7 @@ type Props = {
  */
 export default function ExampleComponent({ label }: Props) {
     const showAlert = async () => {
-        const result = await fetch("/api/example-get", { method: "GET" });
+        const result = await fetch("/api/modules", { method: "GET" });
 
         alert(JSON.stringify(result));
     }
