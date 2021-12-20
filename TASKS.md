@@ -8,6 +8,7 @@
 -   The file naming and structure defined in `README.md` must be respected;
 -   Always use Tailwind classes;
     -   If the value/color is repeated multiple times it should be added to the TailwindCSS theme;
+-   The project must be done in TypeScript.
 
 ## PanoroCRM Login
 
@@ -19,7 +20,7 @@
 
 ### Login
 
-**Path**: `/api/login`  
+**Path**: `/api/users/login`  
 **Method**: `POST`  
 **Content-Type**: `application/json`  
 **Params**:
@@ -40,7 +41,7 @@ For testing the only result will return `200` is for:
 
 ### Register
 
-**Path**: `/api/register`  
+**Path**: `/api/users/register`  
 **Method**: `POST`  
 **Content-Type**: `application/json`  
 **Params**:
@@ -57,6 +58,21 @@ For testing the only result will return `200` is for:
 
 Request for registering to the CRM.  
 
+### Recover password
+
+**Path**: `/api/users/recover_password`  
+**Method**: `POST`  
+**Content-Type**: `application/json`  
+**Params**:
+
+- `email` - the email for recovering the password
+
+**Returns**:
+
+- `200`, `true`
+
+Request for recovering the password of an user.
+
 ### Get modules
 
 **Path**: `/api/modules`  
@@ -65,6 +81,6 @@ Request for registering to the CRM.
 **Params**: nothing  
 **Returns**:
 
-- `200`, `{ icon: string, name: string, description: string }[]` - login with success
+- `200`, `{ icon: string, color: string, name: string, description: string }[]` - login with success
 
 Request for getting the modules.
