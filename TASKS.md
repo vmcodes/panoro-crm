@@ -11,14 +11,18 @@
     -   If the value/color is repeated multiple times it should be added to the
         TailwindCSS theme;
 -   The project must be done in TypeScript.
+-   The design must be responsive (mobile screens, tablet screens,
+    laptop screens and 4k screens)
 
 ## PanoroCRM Login
 
 -   The design can be found [here](https://www.figma.com/file/rD9S6QJOrCS5o4pPtfoLHi/CRM---NOU?node-id=199%3A701);
+    -   The missing UI elements from the mobile design that are present on the
+        desktop side should be also added to the mobile side;
 -   Checking on client-side and show error if the password is less than
     `src/data/MinimumPasswordLength.ts` characteres;
 -   Handle errors from the server;
--   See `user_flow_diagram.svg` for the user flow;
+-   See `user_flow_diagram.svg` for the user flow that must be implemented accordingly;
 -   The **Register page** should be created as a single page holding all the
     data and each section be created as components and lazy loaded;
 -   The phone inputs should be done using `react-phone-input-2`;
