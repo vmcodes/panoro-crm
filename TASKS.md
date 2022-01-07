@@ -19,6 +19,16 @@
 -   The design can be found [here](https://www.figma.com/file/rD9S6QJOrCS5o4pPtfoLHi/CRM---NOU?node-id=199%3A701);
     -   The missing UI elements from the mobile design that are present on the
         desktop side should be also added to the mobile side;
+    -   On screen "Module disponibile 2" there should be a button below all the
+        modules list with "Ok" that will go back the user to "Module 
+        disponibile" screen;
+    -   On screen "Module disponibile 2" will be displayed all the modules.
+        If one module is already activated than the button will be gray
+        saying "Already activated. Deactivate" and when pressed will
+        delete the deactivate the module making the button blue again
+        with the label from design - see user flow for better understanding;
+    -   On the mobile screen of "Module disponibile 2" tapping a module will
+        activate or deactivate it;
 -   Checking on client-side and show error if the password is less than
     `src/data/MinimumPasswordLength.ts` characteres;
 -   Handle errors from the server;
