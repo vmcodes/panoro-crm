@@ -1,5 +1,10 @@
 # TASKS
 
+Repository URL: https://gitlab.com/softprovider-freelancers/panoro-crm-login .
+
+Design URL: https://www.figma.com/file/rD9S6QJOrCS5o4pPtfoLHi/CRM---NOU?node-id=199%3A701
+only the top part named "LOGIN / Signup / recover".
+
 ## General
 
 -   All the tasks must be worked on this repository;
@@ -16,7 +21,7 @@
 
 ## PanoroCRM Login
 
--   The design can be found [here](https://www.figma.com/file/rD9S6QJOrCS5o4pPtfoLHi/CRM---NOU?node-id=199%3A701);
+-   The design is only the top part named "LOGIN / Signup / recover":
     -   The missing UI elements from the mobile design that are present on the
         desktop side should be also added to the mobile side;
     -   On screen "Module disponibile 2" there should be a button below all the
@@ -48,6 +53,97 @@
     disponibile" screen;
 -   The localization strings for `accountType`, `businessActivity`, `employees`
     can be found in the `localization/ro` directory;
+
+## Components
+
+The pages and components files were already created and are the following:
+
+### Base
+
+**File**: `src/components/Base.tsx`  
+**Details**: The base component that renders the blue part of all pages and as
+children are the actual pages
+
+### LoginPage
+
+**File**: `src/pages/LoginPage.tsx`  
+**Figma panel**: Sing in / Sign in [Mobile]  
+**URL**: /login  
+
+### RecoverPasswordPage
+
+**File**: `src/pages/RecoverPasswordPage.tsx`  
+**Figma panel**: Recover, Finish parola resetata / Recover[Mobile]  
+**URL**: /recover  
+**Details**: The mobile design panel for the finish is missing, but follow the
+panel "Finish [mobile]"  
+
+### RegisterPage
+
+**File**: `src/pages/RegisterPage.tsx`  
+**Figma panel**: Sign Up, Details, Module disponibile, Module disponible 2,
+Module disponible, Finish / Sign Up [Mobile], Details [Mobile], Finish [Mobile]   
+**URL**: /signup  
+
+### recover_password/FormSection
+
+**File**: `src/components/recover_password/FormSection.tsx`  
+**Figma panel**: Recover / Recover[Mobile]  
+**Details**: The form with the details for recovering the password
+
+### recover_password/SuccessSection
+
+**File**: `src/components/recover_password/FormSection.tsx`  
+**Figma panel**: Finish parola resetata  
+**Details**: The design for the mobile part is missing, but follow "Finish
+[Mobile]"
+
+### register/BasicFieldsFormSection
+
+**File**: `src/components/register/BasicFieldsFormSection.tsx`  
+**Figma panel**: Sign Up / Sign Up[Mobile]  
+
+### register/BusinessFieldsFormSection
+
+**File**: `src/components/register/BusinessFieldsFormSection.tsx`  
+**Figma panel**: Details / Details [Mobile] (first one)  
+**Details**: This phase is displayed only if the user selected
+AccountType.BUSINESS at the previous phase
+
+### register/ModulesSection
+
+**File**: `src/components/register/ModulesSection.tsx`  
+**Figma panel**: Module disponible / Details [Mobile] (second one)  
+**Details**: This phase will contain the selected modules of the user. At first
+will contains no modules, but when user clicks on "Descopera mai multe module"
+the component DiscoverModules will open and allow for
+user to add/select modules, or deselect them.  
+Each module added from the DiscoverModules component then will be seen in this
+component.
+
+### register/DiscoverModules
+
+**File**: `src/components/register/DiscoverModules.tsx`  
+**Figma panel**: Module disponible 2 / Details [Mobile] (third one)  
+**Details**: This component contains all the modules available to the user
+that are retrived from with the API. In the bottom of the page will be a button
+named "OK" that return to the ModulesSection phase.
+
+### register/Module
+
+![Module 1](./docs/Module1.png)
+
+![Module 2](./docs/Module2.png)
+
+**File**: `src/components/register/Module.tsx`  
+**Details**: A singular module component. The `data` props is the data received
+from the API. The `actionButton` is the blue button from the modules in the
+panel "Module disponibile 2".
+
+### register/SuccessRegisteredSection
+
+**File**: `src/components/register/SuccessRegisteredSection.tsx`  
+**Figma panel**: Finish / Finish [Mobile]  
 
 ## API
 
