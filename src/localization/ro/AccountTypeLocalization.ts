@@ -1,8 +1,8 @@
 //= Structures & Data
 // Own
-import { AccountType } from "../../data/AccountType";
+import { AccountType } from '../../data/AccountType';
 
 export const AccountTypeLocalization = {
-    [AccountType.PERSON]: "Persoana fizica",
-    [AccountType.BUSINESS]: "Persoana juridica"
-}
+    [AccountType.PERSON]: 'Persoana fizica',
+    [AccountType.BUSINESS]: 'Persoana juridica',
+};

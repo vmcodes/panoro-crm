@@ -1,6 +1,6 @@
 //= Functions & Modules
 // Others
-import React from "react";
+import React from 'react';
 
 /**
  * The business register form section
@@ -9,10 +9,3 @@ export default function BusinessFieldsFormSection() {
     // TODO
     return null;
 }
-
-
-
-
-
-
-

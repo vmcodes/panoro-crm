@@ -4,11 +4,15 @@
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist/**/*"],
+    "files": [
+        "dist/**/*"
+    ],
     "scripts": {
         "run-dummy-server": "npx ts-node dummy_api_server",
         "run-webpack": "webpack serve --mode development",
-        "run": "npm-run-all --parallel \"run-dummy-server\" \"run-webpack\""
+        "start": "npm-run-all --parallel \"run-dummy-server\" \"run-webpack\"",
+        "format": "npx prettier --write .",
+        "clean": "gatsby clean && del package-lock.json && rd /s /q node_modules && npm i"
     },
     "author": "Softprovider",
     "license": "ISC",
@@ -44,6 +48,7 @@
         "mini-css-extract-plugin": "^2.3.0",
         "npm-run-all": "^4.1.5",
         "postcss-loader": "^6.1.1",
+        "prettier": "^2.5.1",
         "purgecss-webpack-plugin": "^4.0.3",
         "react-refresh": "^0.11.0",
         "resolve-url-loader": "^4.0.0",

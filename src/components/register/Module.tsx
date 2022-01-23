@@ -1,10 +1,10 @@
 //= Functions & Modules
 // Others
-import React from "react";
+import React from 'react';
 
 //= Structures & Data
 // Own
-import { ModuleItem } from "../../data/ModuleItem";
+import { ModuleItem } from '../../data/ModuleItem';
 
 type Props = {
     data: ModuleItem;
@@ -13,7 +13,7 @@ type Props = {
     onDeleteButtonPress?: () => void;
     onActionButtonPress?: () => void;
     actionButtonLabel?: string;
-}
+};
 
 /**
  * A module component
@@ -30,4 +30,3 @@ export default function ModulesSection(props: Props) {
     // TODO
     return null;
 }
-

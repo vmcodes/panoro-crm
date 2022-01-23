@@ -4,10 +4,10 @@ import React from 'react';
 
 //= React components
 // Own
-import Base from "./components/Base";
+import Base from './components/Base';
 // Others
-import { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 //= Style & Assets
 // Own
@@ -25,12 +25,11 @@ export default function App() {
         <Base>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path="login" element={<LoginPage/>}/>
-                    <Route path="signup" element={<RegisterPage/>}/>
-                    <Route path="recover" element={<RecoverPasswordPage/>}/>
+                    <Route path="login" element={<LoginPage />} />
+                    <Route path="signup" element={<RegisterPage />} />
+                    <Route path="recover" element={<RecoverPasswordPage />} />
                 </Routes>
             </Suspense>
         </Base>
     );
 }
-

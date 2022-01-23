@@ -1,15 +1,11 @@
 //= Functions & Modules
 // Others
-import React from "react";
-
-type Props = React.PropsWithChildren<{}>;
+import React from 'react';
 
 /**
- * The base component of all the pages 
+ * The base component of all the pages
  */
-export default function Base({ children }: Props) {
+export default function Base({ children }) {
     // TODO
     return children;
 }
-
-

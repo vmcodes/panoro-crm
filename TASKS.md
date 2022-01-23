@@ -25,7 +25,7 @@ only the top part named "LOGIN / Signup / recover".
     -   The missing UI elements from the mobile design that are present on the
         desktop side should be also added to the mobile side;
     -   On screen "Module disponibile 2" there should be a button below all the
-        modules list with "Ok" that will go back the user to "Module 
+        modules list with "Ok" that will go back the user to "Module
         disponibile" screen;
     -   On screen "Module disponibile 2" will be displayed all the modules.
         If one module is already activated than the button will be gray
@@ -68,7 +68,7 @@ children are the actual pages
 
 **File**: `src/pages/LoginPage.tsx`  
 **Figma panel**: Sing in / Sign in [Mobile]  
-**URL**: /login  
+**URL**: /login
 
 ### RecoverPasswordPage
 
@@ -76,14 +76,14 @@ children are the actual pages
 **Figma panel**: Recover, Finish parola resetata / Recover[Mobile]  
 **URL**: /recover  
 **Details**: The mobile design panel for the finish is missing, but follow the
-panel "Finish [mobile]"  
+panel "Finish [mobile]"
 
 ### RegisterPage
 
 **File**: `src/pages/RegisterPage.tsx`  
 **Figma panel**: Sign Up, Details, Module disponibile, Module disponible 2,
-Module disponible, Finish / Sign Up [Mobile], Details [Mobile], Finish [Mobile]   
-**URL**: /signup  
+Module disponible, Finish / Sign Up [Mobile], Details [Mobile], Finish [Mobile]  
+**URL**: /signup
 
 ### recover_password/FormSection
 
@@ -101,7 +101,7 @@ Module disponible, Finish / Sign Up [Mobile], Details [Mobile], Finish [Mobile]
 ### register/BasicFieldsFormSection
 
 **File**: `src/components/register/BasicFieldsFormSection.tsx`  
-**Figma panel**: Sign Up / Sign Up[Mobile]  
+**Figma panel**: Sign Up / Sign Up[Mobile]
 
 ### register/BusinessFieldsFormSection
 
@@ -143,7 +143,7 @@ panel "Module disponibile 2".
 ### register/SuccessRegisteredSection
 
 **File**: `src/components/register/SuccessRegisteredSection.tsx`  
-**Figma panel**: Finish / Finish [Mobile]  
+**Figma panel**: Finish / Finish [Mobile]
 
 ## API
 
