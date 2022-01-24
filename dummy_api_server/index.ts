@@ -59,90 +59,76 @@ app.use(express.json());
 
 app.post('/api/users/login', (req, res) => {
     if (!req.body.username) {
-        res.status(400).json('Username is missing');
-        return;
+        return res.status(400).json('Username is missing');
     }
 
     if (!req.body.password) {
-        res.status(400).json('Passwors is missing');
-        return;
+        return res.status(400).json('Passwors is missing');
     }
 
     if (req.body.username != LOGIN_USER.username || req.body.password != LOGIN_USER.password) {
-        res.status(400).json('Username or password is wrong');
-        return;
+        return res.status(400).json('Username or password is wrong');
     }
 
-    res.json(true);
+    return res.json(true);
 });
 
 app.post('/api/users/register', (req, res) => {
     if (!req.body.username) {
-        res.status(400).json({ field: 'username', error: 'Username is missing' });
-        return;
+        return res.status(400).json({ field: 'username', error: 'Username is missing' });
     }
 
     if (!req.body.password) {
-        res.status(400).json({ field: 'password', error: 'Password is missing' });
-        return;
+        return res.status(400).json({ field: 'password', error: 'Password is missing' });
     }
 
     if (!req.body.email) {
-        res.status(400).json({ field: 'email', error: 'Email is missing' });
-        return;
+        return res.status(400).json({ field: 'email', error: 'Email is missing' });
     }
 
     if (!req.body.modules) {
-        res.status(400).json({ field: 'modules', error: 'modules is missing' });
-        return;
+        return res.status(400).json({ field: 'modules', error: 'modules is missing' });
     }
 
     if (!Array.isArray(req.body.modules)) {
-        res.status(400).json({ field: 'modules', error: 'Modules is wrong' });
-        return;
+        return res.status(400).json({ field: 'modules', error: 'Modules is wrong' });
     }
 
     if (req.body.accountType == null) {
-        res.status(400).json({ field: 'accountType', error: 'accountType is missing' });
-        return;
+        return res.status(400).json({ field: 'accountType', error: 'accountType is missing' });
     }
 
     if (req.body.accountType == 1) {
         if (req.body.businessActivity == null) {
-            res.status(400).json({ field: 'accountType', error: 'businessActivity is missing' });
-            return;
+            return res.status(400).json({ field: 'accountType', error: 'businessActivity is missing' });
         }
 
         if (req.body.businessName == null) {
-            res.status(400).json({ field: 'businessName', error: 'businessName is missing' });
-            return;
+            return res.status(400).json({ field: 'businessName', error: 'businessName is missing' });
         }
 
         if (req.body.businessPhoneNumber == null) {
-            res.status(400).json({ field: 'businessPhoneNumber', error: 'businessPhoneNumber is missing' });
-            return;
+            return res.status(400).json({ field: 'businessPhoneNumber', error: 'businessPhoneNumber is missing' });
         }
     }
 
     if (req.body.username == LOGIN_USER.username) {
-        res.status(400).json({ field: 'username', error: 'Username is already taken' });
-        return;
+        return res.status(400).json({ field: 'username', error: 'Username is already taken' });
     }
 
-    res.json(true);
+    return res.json(true);
 });
 
 app.get('/api/modules', (_req, res) => {
-    res.json(MODULES);
+    return res.json(MODULES);
 });
 
 app.post('/api/users/recover_password', (req, res) => {
     if (!req.body.email) {
-        res.status(400).json('Email is missing');
-        return;
+        return res.status(400).json('Email is missing');
     }
 
-    res.json(true);
+    return res.json(true);
 });
 
 app.listen(process.env.DUMMY_API_SERVER_PORT || 3001);
