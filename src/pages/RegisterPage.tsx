@@ -17,6 +17,7 @@ export default function RegisterPage() {
         <LoginBase>
             {tab === 0 && <BasicFieldsFormSection setTab={setTab} />}
             {tab === 1 && <BusinessFieldsFormSection setTab={setTab} />}
+            {tab === 2 && <SuccessRegisteredSection />}
         </LoginBase>
     );
 }

@@ -1,6 +1,6 @@
 //= Functions & Modules
 // Others
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 /**
  * The basic register form section
  */
