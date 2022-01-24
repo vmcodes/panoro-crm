@@ -20,7 +20,7 @@ export default function LoginPage() {
 
     return (
         <LoginBase>
-            <div className="text-left align-middle">
+            <div className="lg:w-1/3 w-full">
                 <h1 className="text-4xl font-bold">
                     hello,
                     <br />
@@ -28,13 +28,13 @@ export default function LoginPage() {
                 </h1>
                 <h3 className="text-lg text-grey mt-2">Introdu detaliile pentru a te conecta.</h3>
 
-                <form className="mt-6 lg:w-1/3 w-full" onSubmit={(e) => handleSubmit(e)}>
+                <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
                     <div className="w-full">
                         <label className="text-grey">Email</label>
                         <br />
                         <input
                             className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                            type="text"
+                            type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />

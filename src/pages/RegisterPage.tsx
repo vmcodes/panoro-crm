@@ -1,100 +1,22 @@
 //= Functions & Modules
 // Others
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import LoginBase from '../components/LoginBase';
-import axios from 'axios';
 // components
 const BasicFieldsFormSection = React.lazy(() => import('../components/register/BasicFieldsFormSection'));
 const BusinessFieldsFormSection = React.lazy(() => import('../components/register/BusinessFieldsFormSection'));
 const ModulesSection = React.lazy(() => import('../components/register/ModulesSection'));
 const SuccessRegisteredSection = React.lazy(() => import('../components/register/SuccessRegisteredSection'));
-
 /**
  * The register page
  */
 export default function RegisterPage() {
-    const [name, setName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-
-    async function handleSubmit(event) {
-        event.preventDefault();
-
-        const res = await axios.post('/api/users/login', { username: email, password: password });
-        alert(res?.data);
-    }
+    const [tab, setTab] = useState<number>(0);
 
     return (
         <LoginBase>
-            <div className="text-left align-middle">
-                <h1 className="text-4xl font-bold">
-                    Hello!
-                    <br />
-                    Bine ai venit pe PanoroCRM.
-                </h1>
-                <h3 className="text-lg text-grey mt-2">Introduceti informatiile dumneavoastra pentru a trece la pasul urmator.</h3>
-
-                <form className="mt-6 lg:w-1/3 w-full" onSubmit={(e) => handleSubmit(e)}>
-                    <div className="w-full pt-8">
-                        <label className="text-grey">Nume Prenume</label>
-                        <br />
-                        <input
-                            className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                        <i className="far fa-user ml-2"></i>
-                    </div>
-
-                    <div className="w-full py-4">
-                        <label className="text-grey">Email</label>
-                        <br />
-                        <input
-                            className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                            type="text"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <i className="far fa-envelope-open ml-2"></i>
-                    </div>
-
-                    <div className="w-full py-4">
-                        <label className="text-grey">Parola</label>
-                        <br />
-                        <input
-                            className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <i className="fas fa-lock ml-2"></i>
-                    </div>
-
-                    <div className="w-full py-6">
-                        <label className="text-grey">Tip persoana</label>
-                        <select className="mt-2 pb-2 bg-gray-50 border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
-                            <option>Persoana fizica</option>
-                            <option>Afaceri</option>
-                        </select>
-                    </div>
-
-                    <div className="w-full py-6">
-                        <input
-                            className="mb-3 pt-3 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey rounded-none focus:outline-none rounded-md ring-grey"
-                            type="radio"
-                        />
-                        <label className="text-md font-bold ml-2">Sunt de acord cu termenii si conditiile PanoroCRM.</label>
-                    </div>
-
-                    <div className="w-full py-6">
-                        <button type="submit" className="bg-blue text-white px-4 py-2 rounded float-left font-bold">
-                            Pasul urmator
-                        </button>
-                    </div>
-                </form>
-            </div>
+            {tab === 0 && <BasicFieldsFormSection setTab={setTab} />}
+            {tab === 1 && <BusinessFieldsFormSection setTab={setTab} />}
         </LoginBase>
     );
 }

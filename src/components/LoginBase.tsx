@@ -10,7 +10,7 @@ export default function LoginBase({ children }) {
     return (
         <div className="flex min-h-screen bg-blue">
             <div className="bg-white lg:rounded-tr-xl lg:rounded-br-xl lg:w-3/4 w-full p-6">
-                <div className="center-login">{children}</div>
+                <div className="grid justify-items-center py-24">{children}</div>
             </div>
         </div>
     );
