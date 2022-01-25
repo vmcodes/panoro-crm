@@ -4,12 +4,14 @@ import React from 'react';
 /**
  * The basic register form section
  */
-import Check from '../../images/check.svg';
 
 export default function SuccessRegisteredSection() {
     return (
         <div className="lg:w-1/3 w-full">
-            <img src={Check} alt="finished" />
+            <div className="my-12">
+                <img src="/imgs/check.svg" alt="finished" />
+            </div>
+
             <h1 className="text-4xl font-bold">
                 Contul tau
                 <br />a fost creeat cu succes!

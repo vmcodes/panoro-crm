@@ -9,13 +9,18 @@ const SuccessSection = React.lazy(() => import('../components/recover_password/S
 /**
  * The recover password page
  */
+export enum RecoverStep {
+    BASIC_FIELDS = 0,
+    SUCCESS = 1,
+}
+
 export default function RecoverPasswordPage() {
-    const [tab, setTab] = useState<number>(0);
+    const [currentStep, setCurrentStep] = useState<RecoverStep>(RecoverStep.BASIC_FIELDS);
     // TODO
     return (
         <LoginBase>
-            {tab === 0 && <FormSection setTab={setTab} />}
-            {tab === 1 && <SuccessSection />}
+            {currentStep === RecoverStep.BASIC_FIELDS && <FormSection setCurrentStep={setCurrentStep} />}
+            {currentStep === RecoverStep.SUCCESS && <SuccessSection />}
         </LoginBase>
     );
 }

@@ -1,15 +1,16 @@
 //= Functions & Modules
 // Others
 import React, { useState } from 'react';
+import { RegisterStep } from '../../pages/RegisterPage';
 /**
  * The basic register form section
  */
 
-type SetTabProp = {
-    setTab: React.Dispatch<React.SetStateAction<number>>;
+type CurrentStepProp = {
+    setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
 };
 
-export default function BusinessFieldsFormSection({ setTab }: SetTabProp) {
+export default function BusinessFieldsFormSection({ setCurrentStep }: CurrentStepProp) {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -17,7 +18,7 @@ export default function BusinessFieldsFormSection({ setTab }: SetTabProp) {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        setTab(0);
+        setCurrentStep(RegisterStep.MODULES);
     }
 
     return (
@@ -77,11 +78,15 @@ export default function BusinessFieldsFormSection({ setTab }: SetTabProp) {
                 </div>
 
                 <div className="w-full py-6">
-                    <button onClick={() => setTab(0)} type="button" className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold">
+                    <button
+                        onClick={() => setCurrentStep(RegisterStep.BASIC_FIELDS)}
+                        type="button"
+                        className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold"
+                    >
                         <i className="fas fa-chevron-left ml-2"></i> Inapoi
                     </button>
 
-                    <button onClick={() => setTab(2)} className="bg-blue text-white px-4 py-2 rounded font-bold">
+                    <button type="submit" className="bg-blue text-white px-4 py-2 rounded font-bold">
                         Spre Module
                     </button>
                 </div>

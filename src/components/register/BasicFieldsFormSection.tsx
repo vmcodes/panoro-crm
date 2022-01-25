@@ -1,15 +1,16 @@
 //= Functions & Modules
 // Others
 import React, { useState } from 'react';
+import { RegisterStep } from '../../pages/RegisterPage';
 /**
  * The basic register form section
  */
 
-type SetTabProp = {
-    setTab: React.Dispatch<React.SetStateAction<number>>;
+type CurrentStepProp = {
+    setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
 };
 
-export default function BasicFieldsFormSection({ setTab }: SetTabProp) {
+export default function BasicFieldsFormSection({ setCurrentStep }: CurrentStepProp) {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -17,7 +18,7 @@ export default function BasicFieldsFormSection({ setTab }: SetTabProp) {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        setTab(1);
+        setCurrentStep(RegisterStep.BUSINESS_FIELDS);
     }
 
     return (

@@ -10,14 +10,22 @@ const SuccessRegisteredSection = React.lazy(() => import('../components/register
 /**
  * The register page
  */
+export enum RegisterStep {
+    BASIC_FIELDS = 0,
+    BUSINESS_FIELDS = 1,
+    MODULES = 2,
+    SUCCESS = 3,
+}
+
 export default function RegisterPage() {
-    const [tab, setTab] = useState<number>(0);
+    const [currentStep, setCurrentStep] = useState<RegisterStep>(RegisterStep.MODULES);
 
     return (
         <LoginBase>
-            {tab === 0 && <BasicFieldsFormSection setTab={setTab} />}
-            {tab === 1 && <BusinessFieldsFormSection setTab={setTab} />}
-            {tab === 2 && <SuccessRegisteredSection />}
+            {currentStep === RegisterStep.BASIC_FIELDS && <BasicFieldsFormSection setCurrentStep={setCurrentStep} />}
+            {currentStep === RegisterStep.BUSINESS_FIELDS && <BusinessFieldsFormSection setCurrentStep={setCurrentStep} />}
+            {currentStep === RegisterStep.MODULES && <ModulesSection setCurrentStep={setCurrentStep} />}
+            {currentStep === RegisterStep.SUCCESS && <SuccessRegisteredSection />}
         </LoginBase>
     );
 }

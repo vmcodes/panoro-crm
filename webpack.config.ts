@@ -222,5 +222,8 @@ module.exports = {
         proxy: {
             '/api': `http://localhost:${process.env.DUMMY_API_SERVER_PORT || 3001}`,
         },
+        static: {
+            directory: join(__dirname, 'static'),
+        },
     },
 };

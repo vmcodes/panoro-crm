@@ -1,20 +1,21 @@
 //= Functions & Modules
 // Others
 import React, { useState } from 'react';
+import { RecoverStep } from '../../pages/RecoverPasswordPage';
 /**
  * The basic register form section
  */
-type SetTabProp = {
-    setTab: React.Dispatch<React.SetStateAction<number>>;
+type CurrentStepProp = {
+    setCurrentStep: React.Dispatch<React.SetStateAction<RecoverStep>>;
 };
 
-export default function FormSection({ setTab }: SetTabProp) {
+export default function FormSection({ setCurrentStep }: CurrentStepProp) {
     const [email, setEmail] = useState<string>('');
 
     async function handleSubmit(event) {
         event.preventDefault();
 
-        setTab(1);
+        setCurrentStep(RecoverStep.SUCCESS);
     }
 
     return (
