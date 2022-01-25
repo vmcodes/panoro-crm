@@ -29,18 +29,18 @@ type Props = {
 export default function Module() {
     // TODO
     return (
-        <div className="border border-slate rounded lg:w-1/2 w-full h-full my-6 lg:mx-6">
+        <div className="border border-slate rounded-lg lg:w-1/2 w-full h-full my-6 lg:mx-6">
             <button
                 type="button"
-                className="border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded font-bold float-right m-6"
+                className="border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded-md font-bold float-right m-6"
             >
                 <i className="fas fa-times"></i>
             </button>
 
             <div className="w-full flex justify-center">
-                <div className="w-1/2 m-12 text-center">
+                <div className="w-1/2 m-6 text-center">
                     <div className="text-center flex justify-center w-full">
-                        <img src="/imgs/module1.svg" alt="module" />
+                        <img src="/imgs/module1.svg" alt="module" className="bg-lightblue p-6 rounded-md" />
                     </div>
 
                     <h3 className="text-lg font-bold mt-6">Modul de Tur Virtual</h3>
