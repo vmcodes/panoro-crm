@@ -2,13 +2,13 @@
 // Others
 import React from 'react';
 
-/**
- * The discover modules component where the user can add or remove modules
- */
-export default function DiscoverModules() {
+//= Structures & Data
+// Own
+
+export default function Statistici() {
     // TODO
     return (
-        <div className="border border-slate rounded-lg lg:w-1/2 w-full h-full my-6 lg:mx-6">
+        <div className="border border-slate rounded-lg w-full h-full my-6 lg:mx-6">
             <button
                 type="button"
                 className="border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded-md font-bold float-right m-6"
@@ -19,12 +19,12 @@ export default function DiscoverModules() {
             <div className="w-full flex justify-center">
                 <div className="w-3/4 m-6 text-center">
                     <div className="text-center flex justify-center w-full">
-                        <img src="/imgs/module1.svg" alt="module" className="bg-lightblue p-6 rounded-md" />
+                        <img src="/imgs/module4.svg" alt="module" className="bg-lightgreen p-6 rounded-md" />
                     </div>
 
-                    <h3 className="text-lg font-bold mt-6">Modul de Tur Virtual</h3>
+                    <h3 className="text-lg font-bold mt-6">Modul pentru statistici</h3>
                     <h3 className="text-lg text-grey mt-2">
-                        Adauga si manageriaza tururile virtuale, adauga tur virtual anunturilor tale si urmareste statisticile.
+                        Urmareste toate informatiile esentiale despre anunturi, contacte si clientii tai.
                     </h3>
 
                     <button type="submit" className="bg-blue text-white px-4 py-2 mt-6 rounded font-bold">

@@ -4,32 +4,11 @@ import React from 'react';
 
 //= Structures & Data
 // Own
-import { ModuleItem } from '../../data/ModuleItem';
 
-type Props = {
-    data: ModuleItem;
-    displayDeleteButton?: boolean;
-    displayActionButton?: boolean;
-    onDeleteButtonPress?: () => void;
-    onActionButtonPress?: () => void;
-    actionButtonLabel?: string;
-};
-
-/**
- * A module component
- *
- * @param {Props} props The props of the copmponent
- * @param {ModuleItem} props.data The data of the module
- * @param {boolean} [props.displayDeleteButton] If true display a "X" button in the top-right corner
- * @param {boolena} [props.displayActionButton] If true display a button in the bottom of the component
- * @param {() => void} [props.onDeleteButtonPress] The handler for when the delete button is pressed
- * @param {() => void} [props.onActionButtonPress] The handler for when the action button is pressed
- * @param {string} [props.actionButtonLabel] The label of the action button
- */
-export default function Module() {
+export default function Virtual() {
     // TODO
     return (
-        <div className="border border-slate rounded-lg lg:w-1/2 w-full h-full my-6 lg:mx-6">
+        <div className="border border-slate rounded-lg w-full h-full my-6 lg:mx-6">
             <button
                 type="button"
                 className="border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded-md font-bold float-right m-6"
@@ -40,7 +19,7 @@ export default function Module() {
             <div className="w-full flex justify-center">
                 <div className="w-3/4 m-6 text-center">
                     <div className="text-center flex justify-center w-full">
-                        <img src="/imgs/module1.svg" alt="module" className="bg-lightblue p-6 rounded-md" />
+                        <img src="/imgs/module1.svg" alt="module" className="bg-lightpurple p-6 rounded-md" />
                     </div>
 
                     <h3 className="text-lg font-bold mt-6">Modul de Tur Virtual</h3>

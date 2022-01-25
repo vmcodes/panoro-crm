@@ -2,6 +2,9 @@
 // Others
 import React, { useState } from 'react';
 import { RegisterStep } from '../../pages/RegisterPage';
+import Documente from '../modules/Documente';
+import Statistici from '../modules/Statistici';
+import Virtual from '../modules/Virtual';
 import Module from './Module';
 /**
  * The modules section of register page where user can see the selected modules
@@ -28,8 +31,10 @@ export default function ModulesSection({ setCurrentStep }: CurrentStepProp) {
             <h3 className="text-lg text-grey mt-2">Te rugam sa selectezi modulele pe care doresti sa le activezi</h3>
 
             <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
-                <div className="w-full py-6 flex lg:flex-row flex-col">
-                    <Module />
+                <div className="w-full py-6 grid lg:grid-cols-2 gap-4">
+                    <Virtual />
+                    <Documente />
+                    <Statistici />
                 </div>
 
                 <div className="w-full">
