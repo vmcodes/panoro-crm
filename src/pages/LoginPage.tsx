@@ -65,11 +65,11 @@ export default function LoginPage() {
                     </div>
 
                     <div className="w-full py-6">
-                        <button type="submit" className="bg-blue text-white px-4 py-2 rounded float-left font-bold">
+                        <button type="submit" className="bg-blue text-white px-4 py-2 rounded float-left font-bold hover:shadow-lg">
                             Conecteaza-te
                         </button>
 
-                        <Link to="/signup" className="bg-lightblue text-blue px-4 py-2 rounded float-right font-bold">
+                        <Link to="/signup" className="bg-lightblue text-blue px-4 py-2 rounded float-right font-bold hover:shadow-lg">
                             Creeaza cont
                         </Link>
                     </div>

@@ -37,7 +37,7 @@ export default function FormSection({ setCurrentStep }: CurrentStepProp) {
                 </div>
 
                 <div className="w-full mt-12 py-6">
-                    <button type="submit" className="bg-blue text-white px-4 py-2 rounded float-left font-bold">
+                    <button type="submit" className="bg-blue text-white px-4 py-2 rounded float-left font-bold hover:shadow-lg">
                         Pasul urmator
                     </button>
                 </div>

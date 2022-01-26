@@ -5,7 +5,7 @@ import React from 'react';
 //= Structures & Data
 // Own
 
-export default function Statistici() {
+export default function Contacte() {
     // TODO
     return (
         <div className="border border-slate rounded-lg w-full h-full my-6">
@@ -19,12 +19,12 @@ export default function Statistici() {
             <div className="w-full flex justify-center">
                 <div className="w-3/4 m-6 text-center">
                     <div className="text-center flex justify-center w-full">
-                        <img src="/imgs/module4.svg" alt="module" className="bg-lightgreen p-6 rounded-md" />
+                        <img src="/imgs/module6.svg" alt="module" className="bg-lightyellow p-6 rounded-md" />
                     </div>
 
-                    <h3 className="text-lg font-bold mt-6">Modul pentru statistici</h3>
+                    <h3 className="text-lg font-bold mt-6">Modul pentru contacte</h3>
                     <h3 className="text-lg text-grey mt-2 h-28">
-                        Urmareste toate informatiile esentiale despre anunturi, contacte si clientii tai.
+                        Managementul contactelor printr-un sistem inteligent de tag-uri, asocierea unui contact cu un anunt si multe altele.
                     </h3>
 
                     <button type="submit" className="bg-blue text-white px-4 py-2 mt-6 rounded font-bold hover:shadow-lg">

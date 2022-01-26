@@ -84,7 +84,7 @@ export default function BasicFieldsFormSection({ setCurrentStep }: CurrentStepPr
                 </div>
 
                 <div className="w-full py-6">
-                    <button type="submit" className="bg-blue text-white px-4 py-2 rounded float-left font-bold">
+                    <button type="submit" className="bg-blue text-white px-4 py-2 rounded float-left font-bold hover:shadow-lg">
                         Pasul urmator
                     </button>
                 </div>

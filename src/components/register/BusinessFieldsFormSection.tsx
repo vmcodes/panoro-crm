@@ -81,12 +81,12 @@ export default function BusinessFieldsFormSection({ setCurrentStep }: CurrentSte
                     <button
                         onClick={() => setCurrentStep(RegisterStep.BASIC_FIELDS)}
                         type="button"
-                        className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold"
+                        className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:shadow-lg"
                     >
                         <i className="fas fa-chevron-left ml-2"></i> Inapoi
                     </button>
 
-                    <button type="submit" className="bg-blue text-white px-4 py-2 rounded font-bold">
+                    <button type="submit" className="bg-blue text-white px-4 py-2 rounded font-bold hover:shadow-lg">
                         Spre Module
                     </button>
                 </div>

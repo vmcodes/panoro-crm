@@ -2,10 +2,7 @@
 // Others
 import React, { useState } from 'react';
 import { RegisterStep } from '../../pages/RegisterPage';
-import Documente from '../modules/Documente';
-import Statistici from '../modules/Statistici';
-import Virtual from '../modules/Virtual';
-import Module from './Module';
+import DiscoverModules from './DiscoverModules';
 /**
  * The modules section of register page where user can see the selected modules
  */
@@ -15,9 +12,7 @@ type CurrentStepProp = {
 };
 
 export default function ModulesSection({ setCurrentStep }: CurrentStepProp) {
-    const [name, setName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -30,17 +25,16 @@ export default function ModulesSection({ setCurrentStep }: CurrentStepProp) {
             <h1 className="text-4xl font-bold">Module Active</h1>
             <h3 className="text-lg text-grey mt-2">Te rugam sa selectezi modulele pe care doresti sa le activezi</h3>
 
-            <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
-                <div className="w-full py-6 grid lg:grid-cols-2 gap-4">
-                    <Virtual />
-                    <Documente />
-                    <Statistici />
-                </div>
+            {showModal && <DiscoverModules setShowModal={setShowModal} />}
 
-                <div className="w-full">
+            <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
+                <div className="w-full py-6 grid lg:grid-cols-2 gap-4"></div>
+
+                <div className="w-full mt-96">
                     <button
+                        onClick={() => setShowModal(true)}
                         type="button"
-                        className="bg-white my-6 border border-dashed border-lightblue text-blue px-4 py-2 rounded mr-2 font-bold"
+                        className="bg-white my-6 border border-dashed border-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:border-blue"
                     >
                         Descopera mai multe module
                     </button>
@@ -49,12 +43,12 @@ export default function ModulesSection({ setCurrentStep }: CurrentStepProp) {
                         <button
                             onClick={() => setCurrentStep(RegisterStep.BUSINESS_FIELDS)}
                             type="button"
-                            className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold"
+                            className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:shadow-lg"
                         >
                             <i className="fas fa-chevron-left ml-2"></i> Inapoi
                         </button>
 
-                        <button type="submit" className="bg-blue text-white px-4 py-2 rounded font-bold">
+                        <button type="submit" className="bg-blue text-white px-4 py-2 rounded font-bold hover:shadow-lg">
                             Creeaza cont
                         </button>
                     </div>
