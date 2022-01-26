@@ -14,19 +14,22 @@ export default function Documente({ modules, setModules }: Props) {
     // TODO
     return (
         <div className="border border-slate rounded-lg w-full h-full my-6">
-            <button
-                type="button"
-                onClick={() =>
-                    setModules({
-                        ...modules,
-                        documente: false,
-                    })
-                }
-                disabled={!modules.documente}
-                className="border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded-md font-bold float-right m-6"
-            >
-                <i className="fas fa-times"></i>
-            </button>
+            {modules.documente ? (
+                <button
+                    type="button"
+                    onClick={() =>
+                        setModules({
+                            ...modules,
+                            documente: false,
+                        })
+                    }
+                    className="border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded-md font-bold float-right m-6"
+                >
+                    <i className="fas fa-times"></i>
+                </button>
+            ) : (
+                <div className="h-24"></div>
+            )}
 
             <div className="w-full flex justify-center">
                 <div className="w-3/4 m-6 text-center">
