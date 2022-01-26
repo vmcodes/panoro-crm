@@ -17,14 +17,65 @@ export enum RegisterStep {
     SUCCESS = 3,
 }
 
+export interface Modules {
+    virtual: boolean;
+    documente: boolean;
+    statistici: boolean;
+    facturare: boolean;
+    anunturi: boolean;
+    contacte: boolean;
+}
+
 export default function RegisterPage() {
-    const [currentStep, setCurrentStep] = useState<RegisterStep>(RegisterStep.MODULES);
+    const [currentStep, setCurrentStep] = useState<RegisterStep>(RegisterStep.BASIC_FIELDS);
+    const [nume, setNume] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [parola, setParola] = useState<string>('');
+    const [persona, setPersona] = useState<string>('');
+    const [termenii, setTermenii] = useState<boolean>(false);
+    const [companie, setCompanie] = useState<string>('');
+    const [angajati, setAnajati] = useState<string>('');
+    const [activitate, setActivitate] = useState<string>('');
+    const [telefon, setTelefon] = useState<string>('');
+    const [modules, setModules] = useState<Modules>({
+        virtual: false,
+        documente: false,
+        statistici: false,
+        facturare: false,
+        anunturi: false,
+        contacte: false,
+    });
 
     return (
         <LoginBase>
-            {currentStep === RegisterStep.BASIC_FIELDS && <BasicFieldsFormSection setCurrentStep={setCurrentStep} />}
-            {currentStep === RegisterStep.BUSINESS_FIELDS && <BusinessFieldsFormSection setCurrentStep={setCurrentStep} />}
-            {currentStep === RegisterStep.MODULES && <ModulesSection setCurrentStep={setCurrentStep} />}
+            {currentStep === RegisterStep.BASIC_FIELDS && (
+                <BasicFieldsFormSection
+                    nume={nume}
+                    setNume={setNume}
+                    email={email}
+                    setEmail={setEmail}
+                    parola={parola}
+                    setParola={setParola}
+                    setCurrentStep={setCurrentStep}
+                    setPersona={setPersona}
+                    setTermenii={setTermenii}
+                />
+            )}
+            {currentStep === RegisterStep.BUSINESS_FIELDS && (
+                <BusinessFieldsFormSection
+                    companie={companie}
+                    setCompanie={setCompanie}
+                    anajati={angajati}
+                    setAnajati={setAnajati}
+                    setActivitate={setActivitate}
+                    telefon={telefon}
+                    setTelefon={setTelefon}
+                    setCurrentStep={setCurrentStep}
+                />
+            )}
+            {currentStep === RegisterStep.MODULES && (
+                <ModulesSection modules={modules} setModules={setModules} setCurrentStep={setCurrentStep} />
+            )}
             {currentStep === RegisterStep.SUCCESS && <SuccessRegisteredSection />}
         </LoginBase>
     );

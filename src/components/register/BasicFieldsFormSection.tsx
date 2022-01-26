@@ -1,20 +1,34 @@
 //= Functions & Modules
 // Others
-import React, { useState } from 'react';
+import React from 'react';
 import { RegisterStep } from '../../pages/RegisterPage';
 /**
  * The basic register form section
  */
 
-type CurrentStepProp = {
+type Props = {
+    nume: string;
+    email: string;
+    parola: string;
+    setNume: React.Dispatch<React.SetStateAction<string>>;
+    setEmail: React.Dispatch<React.SetStateAction<string>>;
+    setParola: React.Dispatch<React.SetStateAction<string>>;
+    setPersona: React.Dispatch<React.SetStateAction<string>>;
+    setTermenii: React.Dispatch<React.SetStateAction<boolean>>;
     setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
 };
 
-export default function BasicFieldsFormSection({ setCurrentStep }: CurrentStepProp) {
-    const [name, setName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-
+export default function BasicFieldsFormSection({
+    nume,
+    email,
+    parola,
+    setEmail,
+    setNume,
+    setParola,
+    setPersona,
+    setTermenii,
+    setCurrentStep,
+}: Props) {
     async function handleSubmit(event) {
         event.preventDefault();
 
@@ -37,8 +51,8 @@ export default function BasicFieldsFormSection({ setCurrentStep }: CurrentStepPr
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
                         type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={nume}
+                        onChange={(e) => setNume(e.target.value)}
                     />
                     <i className="far fa-user ml-2"></i>
                 </div>
@@ -60,18 +74,21 @@ export default function BasicFieldsFormSection({ setCurrentStep }: CurrentStepPr
                     <br />
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        type="parola"
+                        value={parola}
+                        onChange={(e) => setParola(e.target.value)}
                     />
                     <i className="fas fa-lock ml-2"></i>
                 </div>
 
                 <div className="w-full py-6">
                     <label className="text-grey">Tip persoana</label>
-                    <select className="mt-2 pb-2 bg-gray-50 border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
-                        <option>Persoana fizica</option>
-                        <option>Afaceri</option>
+                    <select
+                        onChange={(e) => setPersona(e.target.value)}
+                        className="mt-2 pb-2 bg-gray-50 border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
+                    >
+                        <option value="persoana-fizica">Persoana fizica</option>
+                        <option value="afaceri">Afaceri</option>
                     </select>
                 </div>
 
@@ -79,6 +96,7 @@ export default function BasicFieldsFormSection({ setCurrentStep }: CurrentStepPr
                     <input
                         className="mb-3 pt-3 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey rounded-none focus:outline-none rounded-md ring-grey"
                         type="radio"
+                        onClick={() => setTermenii(true)}
                     />
                     <label className="text-md font-bold ml-2">Sunt de acord cu termenii si conditiile PanoroCRM.</label>
                 </div>

@@ -6,15 +6,27 @@ import { RegisterStep } from '../../pages/RegisterPage';
  * The basic register form section
  */
 
-type CurrentStepProp = {
+type Props = {
+    companie: string;
+    anajati: string;
+    telefon: string;
+    setCompanie: React.Dispatch<React.SetStateAction<string>>;
+    setAnajati: React.Dispatch<React.SetStateAction<string>>;
+    setActivitate: React.Dispatch<React.SetStateAction<string>>;
+    setTelefon: React.Dispatch<React.SetStateAction<string>>;
     setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
 };
 
-export default function BusinessFieldsFormSection({ setCurrentStep }: CurrentStepProp) {
-    const [name, setName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-
+export default function BusinessFieldsFormSection({
+    companie,
+    setCompanie,
+    anajati,
+    setAnajati,
+    telefon,
+    setTelefon,
+    setActivitate,
+    setCurrentStep,
+}: Props) {
     async function handleSubmit(event) {
         event.preventDefault();
 
@@ -37,8 +49,8 @@ export default function BusinessFieldsFormSection({ setCurrentStep }: CurrentSte
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
                         type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={companie}
+                        onChange={(e) => setCompanie(e.target.value)}
                     />
                     <i className="fas fa-store ml-2"></i>
                 </div>
@@ -49,19 +61,22 @@ export default function BusinessFieldsFormSection({ setCurrentStep }: CurrentSte
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
                         type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={anajati}
+                        onChange={(e) => setAnajati(e.target.value)}
                     />
                     <i className="fas fa-users ml-2"></i>
                 </div>
 
                 <div className="w-full py-6">
                     <label className="text-grey">Obiect de activitate</label>
-                    <select className="mt-2 pb-2 bg-gray-50 border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
+                    <select
+                        onChange={(e) => setActivitate(e.target.value)}
+                        className="mt-2 pb-2 bg-gray-50 border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
+                    >
                         <option>Selecteaza activitatea</option>
-                        <option>activitatea 1</option>
-                        <option>activitatea 2</option>
-                        <option>activitatea 3</option>
+                        <option value="activitate1">activitatea 1</option>
+                        <option value="activitate2">activitatea 2</option>
+                        <option value="activitate3">activitatea 3</option>
                     </select>
                 </div>
 
@@ -70,9 +85,9 @@ export default function BusinessFieldsFormSection({ setCurrentStep }: CurrentSte
                     <br />
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        type="text"
+                        value={telefon}
+                        onChange={(e) => setTelefon(e.target.value)}
                     />
                     <i className="fas fa-phone ml-2"></i>
                 </div>

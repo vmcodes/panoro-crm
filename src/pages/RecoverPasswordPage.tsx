@@ -16,6 +16,7 @@ export enum RecoverStep {
 
 export default function RecoverPasswordPage() {
     const [currentStep, setCurrentStep] = useState<RecoverStep>(RecoverStep.BASIC_FIELDS);
+
     // TODO
     return (
         <LoginBase>

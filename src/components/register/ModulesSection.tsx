@@ -1,17 +1,25 @@
 //= Functions & Modules
 // Others
 import React, { useState } from 'react';
-import { RegisterStep } from '../../pages/RegisterPage';
+import { Modules, RegisterStep } from '../../pages/RegisterPage';
 import DiscoverModules from './DiscoverModules';
+import Anunturi from '../modules/Anunturi';
+import Contacte from '../modules/Contacte';
+import Documente from '../modules/Documente';
+import Facturare from '../modules/Facturare';
+import Statistici from '../modules/Statistici';
+import Virtual from '../modules/Virtual';
 /**
  * The modules section of register page where user can see the selected modules
  */
 
-type CurrentStepProp = {
+type Props = {
+    modules: Modules;
+    setModules: React.Dispatch<React.SetStateAction<Modules>>;
     setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
 };
 
-export default function ModulesSection({ setCurrentStep }: CurrentStepProp) {
+export default function ModulesSection({ modules, setModules, setCurrentStep }: Props) {
     const [showModal, setShowModal] = useState<boolean>(false);
 
     async function handleSubmit(event) {
@@ -25,10 +33,17 @@ export default function ModulesSection({ setCurrentStep }: CurrentStepProp) {
             <h1 className="text-4xl font-bold">Module Active</h1>
             <h3 className="text-lg text-grey mt-2">Te rugam sa selectezi modulele pe care doresti sa le activezi</h3>
 
-            {showModal && <DiscoverModules setShowModal={setShowModal} />}
+            {showModal && <DiscoverModules modules={modules} setModules={setModules} setShowModal={setShowModal} />}
 
             <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
-                <div className="w-full py-6 grid lg:grid-cols-2 gap-4"></div>
+                <div className="w-full py-6 grid lg:grid-cols-2 gap-4">
+                    {modules.virtual && <Virtual modules={modules} setModules={setModules} />}
+                    {modules.documente && <Documente modules={modules} setModules={setModules} />}
+                    {modules.statistici && <Statistici modules={modules} setModules={setModules} />}
+                    {modules.facturare && <Facturare modules={modules} setModules={setModules} />}
+                    {modules.anunturi && <Anunturi modules={modules} setModules={setModules} />}
+                    {modules.contacte && <Contacte modules={modules} setModules={setModules} />}
+                </div>
 
                 <div className="w-full mt-96">
                     <button
