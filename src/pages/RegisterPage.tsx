@@ -34,10 +34,10 @@ export default function RegisterPage() {
     const [parola, setParola] = useState<string>('');
     const [persona, setPersona] = useState<string>('');
     const [termenii, setTermenii] = useState<boolean>(false);
-    const [companie, setCompanie] = useState<string>(null);
+    const [companie, setCompanie] = useState<string>('');
     const [angajati, setAnajati] = useState<string>('');
-    const [activitate, setActivitate] = useState<string>(null);
-    const [telefon, setTelefon] = useState<string>(null);
+    const [activitate, setActivitate] = useState<string>('null');
+    const [telefon, setTelefon] = useState<string>('');
     const [modules, setModules] = useState<Modules>({
         virtual: false,
         documente: false,

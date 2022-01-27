@@ -32,7 +32,7 @@ export default function BusinessFieldsFormSection({
     async function handleSubmit(event) {
         event.preventDefault();
 
-        if (activitate?.length > 0) {
+        if (JSON.parse(activitate) !== null) {
             setCurrentStep(RegisterStep.MODULES);
         }
     }
@@ -82,7 +82,7 @@ export default function BusinessFieldsFormSection({
                         onChange={(e) => setActivitate(e.target.value)}
                         className="mt-2 pb-2 bg-white border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
                     >
-                        <option value="">Selecteaza activitatea</option>
+                        <option value="null">Selecteaza activitatea</option>
                         <option value="1">activitatea 1</option>
                         <option value="2">activitatea 2</option>
                         <option value="3">activitatea 3</option>
