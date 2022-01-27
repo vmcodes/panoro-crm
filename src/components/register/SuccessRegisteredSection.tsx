@@ -14,7 +14,6 @@ export default function SuccessRegisteredSection() {
                 </div>
 
                 <h1 className="text-4xl lg:text-black text-white font-bold">
-                    {' '}
                     Contul tau
                     <br />a fost creeat cu succes!
                 </h1>
