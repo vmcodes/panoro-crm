@@ -35,14 +35,16 @@ export default function BusinessFieldsFormSection({
 
     return (
         <div className="lg:w-1/3 w-full">
-            <h1 className="text-4xl font-bold">
-                Hello!
-                <br />
-                Bine ai venit pe PanoroCRM.
-            </h1>
-            <h3 className="text-lg text-grey mt-2">Introdu informatiile mai jos pentru a putea creea un cont.</h3>
+            <div className="lg:p-0 p-6">
+                <h1 className="text-4xl lg:text-black text-white font-bold">
+                    Hello!
+                    <br />
+                    Bine ai venit pe PanoroCRM.
+                </h1>
+                <h3 className="text-lg lg:text-grey text-white mt-2">Introdu informatiile mai jos pentru a putea creea un cont.</h3>
+            </div>
 
-            <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
+            <form className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
                 <div className="w-full pt-8">
                     <label className="text-grey">Nume companie</label>
                     <br />
@@ -71,7 +73,7 @@ export default function BusinessFieldsFormSection({
                     <label className="text-grey">Obiect de activitate</label>
                     <select
                         onChange={(e) => setActivitate(e.target.value)}
-                        className="mt-2 pb-2 bg-gray-50 border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
+                        className="mt-2 pb-2 bg-white border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
                     >
                         <option>Selecteaza activitatea</option>
                         <option value="activitate1">activitatea 1</option>
@@ -92,7 +94,7 @@ export default function BusinessFieldsFormSection({
                     <i className="fas fa-phone ml-2"></i>
                 </div>
 
-                <div className="w-full py-6">
+                <div className="w-full py-12">
                     <button
                         onClick={() => setCurrentStep(RegisterStep.BASIC_FIELDS)}
                         type="button"

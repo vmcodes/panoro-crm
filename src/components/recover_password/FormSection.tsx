@@ -20,10 +20,12 @@ export default function FormSection({ setCurrentStep }: CurrentStepProp) {
 
     return (
         <div className="lg:w-1/3 w-full">
-            <h1 className="text-4xl font-bold text-left">Ti-ai uitat parola?</h1>
-            <h3 className="text-lg text-grey mt-2">Introdu detaliile mai jos pentru a reseta parola</h3>
+            <div className="lg:p-0 p-6">
+                <h1 className="text-4xl lg:text-black text-white font-bold">Ti-ai uitat parola?</h1>
+                <h3 className="text-lg lg:text-grey text-white mt-2">Introdu detaliile mai jos pentru a reseta parola</h3>
+            </div>
 
-            <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
+            <form className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
                 <div className="w-full py-4">
                     <label className="text-grey">Email</label>
                     <br />

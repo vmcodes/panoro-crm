@@ -37,14 +37,18 @@ export default function BasicFieldsFormSection({
 
     return (
         <div className="lg:w-1/3 w-full">
-            <h1 className="text-4xl font-bold text-left">
-                Hello!
-                <br />
-                Bine ai venit pe PanoroCRM.
-            </h1>
-            <h3 className="text-lg text-grey mt-2">Introduceti informatiile dumneavoastra pentru a trece la pasul urmator.</h3>
+            <div className="lg:p-0 p-6">
+                <h1 className="text-4xl lg:text-black text-white font-bold">
+                    Hello!
+                    <br />
+                    Bine ai venit pe PanoroCRM.
+                </h1>
+                <h3 className="text-lg lg:text-grey text-white mt-2">
+                    Introduceti informatiile dumneavoastra pentru a trece la pasul urmator.
+                </h3>
+            </div>
 
-            <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
+            <form className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
                 <div className="w-full pt-8">
                     <label className="text-grey">Nume Prenume</label>
                     <br />
@@ -85,7 +89,7 @@ export default function BasicFieldsFormSection({
                     <label className="text-grey">Tip persoana</label>
                     <select
                         onChange={(e) => setPersona(e.target.value)}
-                        className="mt-2 pb-2 bg-gray-50 border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
+                        className="mt-2 pb-2 bg-white border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
                     >
                         <option value="persoana-fizica">Persoana fizica</option>
                         <option value="afaceri">Afaceri</option>

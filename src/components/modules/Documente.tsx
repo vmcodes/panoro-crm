@@ -51,7 +51,7 @@ export default function Documente({ modules, setModules }: Props) {
                                 documente: true,
                             })
                         }
-                        className="bg-blue text-white px-4 py-2 mt-6 rounded font-bold hover:shadow-lg"
+                        className="bg-blue text-white px-4 py-2 mt-10 rounded font-bold hover:shadow-lg"
                     >
                         <i className="fas fa-chevron-right ml-2"></i> Activeaza modul
                     </button>

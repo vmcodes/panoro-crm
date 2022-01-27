@@ -30,12 +30,14 @@ export default function ModulesSection({ modules, setModules, setCurrentStep }: 
 
     return (
         <div className="lg:w-2/3 w-full">
-            <h1 className="text-4xl font-bold">Module Active</h1>
-            <h3 className="text-lg text-grey mt-2">Te rugam sa selectezi modulele pe care doresti sa le activezi</h3>
+            <div className="lg:p-0 p-6">
+                <h1 className="text-4xl lg:text-black text-white font-bold">Module Active</h1>
+                <h3 className="text-lg lg:text-grey text-white mt-2">Te rugam sa selectezi modulele pe care doresti sa le activezi</h3>
+            </div>
 
             {showModal && <DiscoverModules modules={modules} setModules={setModules} setShowModal={setShowModal} />}
 
-            <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
+            <form className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
                 <div className="w-full py-6 grid lg:grid-cols-2 gap-4">
                     {modules.virtual && <Virtual modules={modules} setModules={setModules} />}
                     {modules.documente && <Documente modules={modules} setModules={setModules} />}

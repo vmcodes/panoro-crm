@@ -21,15 +21,18 @@ export default function LoginPage() {
     return (
         <LoginBase>
             <div className="lg:w-1/3 w-full">
-                <h1 className="text-4xl font-bold">
-                    hello,
-                    <br />
-                    PanoraCRM
-                </h1>
-                <h3 className="text-lg text-grey mt-2">Introdu detaliile pentru a te conecta.</h3>
+                <div className="lg:p-0 p-6">
+                    <h1 className="text-4xl lg:text-black text-white font-bold">
+                        hello,
+                        <br />
+                        PanoroCRM
+                    </h1>
 
-                <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
-                    <div className="w-full">
+                    <h3 className="text-lg lg:text-grey text-white mt-2">Introdu detaliile pentru a te conecta.</h3>
+                </div>
+
+                <form className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
+                    <div className="w-full py-4">
                         <label className="text-grey">Email</label>
                         <br />
                         <input
