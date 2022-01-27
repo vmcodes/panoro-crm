@@ -6,6 +6,7 @@ import React from 'react';
 // Others
 import { Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import BackToTop from './components/BackToTop';
 
 //= Style & Assets
 // Own
@@ -20,14 +21,18 @@ const RegisterPage = React.lazy(() => import('./pages/RegisterPage'));
  */
 export default function App() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-                <Route path="login" element={<LoginPage />} />
-                <Route path="signup" element={<RegisterPage />} />
-                <Route path="recover" element={<RecoverPasswordPage />} />
+        <>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path="login" element={<LoginPage />} />
+                    <Route path="signup" element={<RegisterPage />} />
+                    <Route path="recover" element={<RecoverPasswordPage />} />
 
-                <Route path="*" element={<Navigate to="login" />} />
-            </Routes>
-        </Suspense>
+                    <Route path="*" element={<Navigate to="login" />} />
+                </Routes>
+            </Suspense>
+
+            <BackToTop />
+        </>
     );
 }
