@@ -1,7 +1,8 @@
 //= Functions & Modules
 // Others
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LoginBase from '../components/LoginBase';
+import axios from 'axios';
 // components
 const BasicFieldsFormSection = React.lazy(() => import('../components/register/BasicFieldsFormSection'));
 const BusinessFieldsFormSection = React.lazy(() => import('../components/register/BusinessFieldsFormSection'));
@@ -33,10 +34,10 @@ export default function RegisterPage() {
     const [parola, setParola] = useState<string>('');
     const [persona, setPersona] = useState<string>('');
     const [termenii, setTermenii] = useState<boolean>(false);
-    const [companie, setCompanie] = useState<string>('');
+    const [companie, setCompanie] = useState<string>(null);
     const [angajati, setAnajati] = useState<string>('');
-    const [activitate, setActivitate] = useState<string>('');
-    const [telefon, setTelefon] = useState<string>('');
+    const [activitate, setActivitate] = useState<string>(null);
+    const [telefon, setTelefon] = useState<string>(null);
     const [modules, setModules] = useState<Modules>({
         virtual: false,
         documente: false,
@@ -45,6 +46,33 @@ export default function RegisterPage() {
         anunturi: false,
         contacte: false,
     });
+    const [submit, setSubmit] = useState<boolean>(false);
+
+    useEffect(() => {
+        async function handleSubmit() {
+            const res = await axios.post('/api/users/register', {
+                username: nume,
+                password: parola,
+                email: email,
+                modules: [modules],
+                accountType: JSON.parse(persona),
+                businessActivity: JSON.parse(activitate),
+                businessName: companie,
+                businessPhoneNumber: telefon,
+            });
+
+            if (res?.data) {
+                alert(res?.data);
+
+                setCurrentStep(RegisterStep.SUCCESS);
+            }
+        }
+
+        if (submit && termenii) {
+            handleSubmit();
+            setSubmit(false);
+        }
+    }, [submit]);
 
     return (
         <LoginBase>
@@ -55,10 +83,13 @@ export default function RegisterPage() {
                     email={email}
                     setEmail={setEmail}
                     parola={parola}
+                    persona={persona}
+                    termenii={termenii}
                     setParola={setParola}
                     setCurrentStep={setCurrentStep}
                     setPersona={setPersona}
                     setTermenii={setTermenii}
+                    setSubmit={setSubmit}
                 />
             )}
             {currentStep === RegisterStep.BUSINESS_FIELDS && (
@@ -66,6 +97,7 @@ export default function RegisterPage() {
                     companie={companie}
                     setCompanie={setCompanie}
                     anajati={angajati}
+                    activitate={activitate}
                     setAnajati={setAnajati}
                     setActivitate={setActivitate}
                     telefon={telefon}
@@ -74,7 +106,7 @@ export default function RegisterPage() {
                 />
             )}
             {currentStep === RegisterStep.MODULES && (
-                <ModulesSection modules={modules} setModules={setModules} setCurrentStep={setCurrentStep} />
+                <ModulesSection modules={modules} setModules={setModules} setCurrentStep={setCurrentStep} setSubmit={setSubmit} />
             )}
             {currentStep === RegisterStep.SUCCESS && <SuccessRegisteredSection />}
         </LoginBase>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export default function SuccessSection() {
     return (
         <div className="lg:w-1/3 w-full">
-            <div className="lg:p-0 p-6">
+            <div className="lg:p-0 p-6 flex flex-col justify-center">
                 <h1 className="text-4xl lg:text-black text-white font-bold">
                     Parola ta <br />a fost resetata!
                 </h1>
@@ -18,7 +18,10 @@ export default function SuccessSection() {
             </div>
 
             <div className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full">
-                <Link to="/login" className="bg-blue text-white px-4 py-2 rounded float-left font-bold hover:shadow-lg mt-12">
+                <Link
+                    to="/login"
+                    className="bg-blue text-white px-4 py-2 rounded float-left font-bold hover:shadow-lg mt-12 w-1/2 text-center"
+                >
                     CONECTEAZA-TE
                 </Link>
             </div>

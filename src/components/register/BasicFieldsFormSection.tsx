@@ -10,29 +10,39 @@ type Props = {
     nume: string;
     email: string;
     parola: string;
+    persona: string;
+    termenii: boolean;
     setNume: React.Dispatch<React.SetStateAction<string>>;
     setEmail: React.Dispatch<React.SetStateAction<string>>;
     setParola: React.Dispatch<React.SetStateAction<string>>;
     setPersona: React.Dispatch<React.SetStateAction<string>>;
     setTermenii: React.Dispatch<React.SetStateAction<boolean>>;
     setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
+    setSubmit: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function BasicFieldsFormSection({
     nume,
     email,
     parola,
+    persona,
+    termenii,
     setEmail,
     setNume,
     setParola,
     setPersona,
     setTermenii,
     setCurrentStep,
+    setSubmit,
 }: Props) {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        setCurrentStep(RegisterStep.BUSINESS_FIELDS);
+        if (termenii && JSON.parse(persona) === 1) {
+            setCurrentStep(RegisterStep.BUSINESS_FIELDS);
+        } else if (termenii && JSON.parse(persona) === 0) {
+            setSubmit(true);
+        }
     }
 
     return (
@@ -57,6 +67,7 @@ export default function BasicFieldsFormSection({
                         type="text"
                         value={nume}
                         onChange={(e) => setNume(e.target.value)}
+                        required
                     />
                     <i className="far fa-user ml-2"></i>
                 </div>
@@ -69,6 +80,7 @@ export default function BasicFieldsFormSection({
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                     />
                     <i className="far fa-envelope-open ml-2"></i>
                 </div>
@@ -78,9 +90,11 @@ export default function BasicFieldsFormSection({
                     <br />
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                        type="parola"
+                        type="password"
+                        minLength={6}
                         value={parola}
                         onChange={(e) => setParola(e.target.value)}
+                        required
                     />
                     <i className="fas fa-lock ml-2"></i>
                 </div>
@@ -88,11 +102,14 @@ export default function BasicFieldsFormSection({
                 <div className="w-full py-6">
                     <label className="text-grey">Tip persoana</label>
                     <select
+                        value={persona}
                         onChange={(e) => setPersona(e.target.value)}
+                        required
                         className="mt-2 pb-2 bg-white border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
                     >
-                        <option value="persoana-fizica">Persoana fizica</option>
-                        <option value="afaceri">Afaceri</option>
+                        <option value="null">Selecteaza persoana</option>
+                        <option value="0">Persoana fizica</option>
+                        <option value="1">Afaceri</option>
                     </select>
                 </div>
 

@@ -17,15 +17,16 @@ type Props = {
     modules: Modules;
     setModules: React.Dispatch<React.SetStateAction<Modules>>;
     setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
+    setSubmit: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function ModulesSection({ modules, setModules, setCurrentStep }: Props) {
+export default function ModulesSection({ modules, setModules, setCurrentStep, setSubmit }: Props) {
     const [showModal, setShowModal] = useState<boolean>(false);
 
     async function handleSubmit(event) {
         event.preventDefault();
 
-        setCurrentStep(RegisterStep.SUCCESS);
+        setSubmit(true);
     }
 
     return (

@@ -10,6 +10,7 @@ type Props = {
     companie: string;
     anajati: string;
     telefon: string;
+    activitate: string;
     setCompanie: React.Dispatch<React.SetStateAction<string>>;
     setAnajati: React.Dispatch<React.SetStateAction<string>>;
     setActivitate: React.Dispatch<React.SetStateAction<string>>;
@@ -21,6 +22,7 @@ export default function BusinessFieldsFormSection({
     companie,
     setCompanie,
     anajati,
+    activitate,
     setAnajati,
     telefon,
     setTelefon,
@@ -30,7 +32,9 @@ export default function BusinessFieldsFormSection({
     async function handleSubmit(event) {
         event.preventDefault();
 
-        setCurrentStep(RegisterStep.MODULES);
+        if (activitate?.length > 0) {
+            setCurrentStep(RegisterStep.MODULES);
+        }
     }
 
     return (
@@ -53,6 +57,7 @@ export default function BusinessFieldsFormSection({
                         type="text"
                         value={companie}
                         onChange={(e) => setCompanie(e.target.value)}
+                        required
                     />
                     <i className="fas fa-store ml-2"></i>
                 </div>
@@ -65,6 +70,7 @@ export default function BusinessFieldsFormSection({
                         type="text"
                         value={anajati}
                         onChange={(e) => setAnajati(e.target.value)}
+                        required
                     />
                     <i className="fas fa-users ml-2"></i>
                 </div>
@@ -72,24 +78,27 @@ export default function BusinessFieldsFormSection({
                 <div className="w-full py-6">
                     <label className="text-grey">Obiect de activitate</label>
                     <select
+                        value={activitate}
                         onChange={(e) => setActivitate(e.target.value)}
                         className="mt-2 pb-2 bg-white border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
                     >
-                        <option>Selecteaza activitatea</option>
-                        <option value="activitate1">activitatea 1</option>
-                        <option value="activitate2">activitatea 2</option>
-                        <option value="activitate3">activitatea 3</option>
+                        <option value="">Selecteaza activitatea</option>
+                        <option value="1">activitatea 1</option>
+                        <option value="2">activitatea 2</option>
+                        <option value="3">activitatea 3</option>
                     </select>
                 </div>
 
                 <div className="w-full py-4">
-                    <label className="text-grey">Telefon</label>
+                    <label className="text-grey">Telefon (0700-000-000)</label>
                     <br />
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
-                        type="text"
+                        type="tel"
+                        pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
                         value={telefon}
                         onChange={(e) => setTelefon(e.target.value)}
+                        required
                     />
                     <i className="fas fa-phone ml-2"></i>
                 </div>

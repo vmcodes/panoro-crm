@@ -40,6 +40,7 @@ export default function LoginPage() {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                         <i className="far fa-envelope-open ml-2"></i>
                     </div>
@@ -52,6 +53,7 @@ export default function LoginPage() {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                         <i className="fas fa-lock ml-2"></i>
                     </div>

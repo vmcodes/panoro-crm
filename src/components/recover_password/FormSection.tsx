@@ -2,6 +2,7 @@
 // Others
 import React, { useState } from 'react';
 import { RecoverStep } from '../../pages/RecoverPasswordPage';
+import axios from 'axios';
 /**
  * The basic register form section
  */
@@ -14,8 +15,13 @@ export default function FormSection({ setCurrentStep }: CurrentStepProp) {
 
     async function handleSubmit(event) {
         event.preventDefault();
+        const res = await axios.post('/api/users/recover_password', { email: email });
 
-        setCurrentStep(RecoverStep.SUCCESS);
+        if (res?.data) {
+            alert(res?.data);
+
+            setCurrentStep(RecoverStep.SUCCESS);
+        }
     }
 
     return (
@@ -34,6 +40,7 @@ export default function FormSection({ setCurrentStep }: CurrentStepProp) {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                     />
                     <i className="far fa-envelope-open ml-2"></i>
                 </div>

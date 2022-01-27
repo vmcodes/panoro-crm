@@ -94,25 +94,25 @@ app.post('/api/users/register', (req, res) => {
         return res.status(400).json({ field: 'modules', error: 'Modules is wrong' });
     }
 
-    if (req.body.accountType == null) {
+    if (req.body.accountType === null) {
         return res.status(400).json({ field: 'accountType', error: 'accountType is missing' });
     }
 
-    if (req.body.accountType == 1) {
-        if (req.body.businessActivity == null) {
+    if (req.body.accountType === 1) {
+        if (req.body.businessActivity === null) {
             return res.status(400).json({ field: 'accountType', error: 'businessActivity is missing' });
         }
 
-        if (req.body.businessName == null) {
+        if (req.body.businessName === null) {
             return res.status(400).json({ field: 'businessName', error: 'businessName is missing' });
         }
 
-        if (req.body.businessPhoneNumber == null) {
+        if (req.body.businessPhoneNumber === null) {
             return res.status(400).json({ field: 'businessPhoneNumber', error: 'businessPhoneNumber is missing' });
         }
     }
 
-    if (req.body.username == LOGIN_USER.username) {
+    if (req.body.email === LOGIN_USER.username) {
         return res.status(400).json({ field: 'username', error: 'Username is already taken' });
     }
 

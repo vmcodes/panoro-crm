@@ -1,6 +1,7 @@
 //= Functions & Modules
 // Others
 import React from 'react';
+import { Link } from 'react-router-dom';
 /**
  * The basic register form section
  */
@@ -8,8 +9,8 @@ import React from 'react';
 export default function SuccessRegisteredSection() {
     return (
         <div className="lg:w-1/3 w-full">
-            <div className="lg:p-0 p-6">
-                <div className="my-12">
+            <div className="lg:p-0 p-6 flex flex-col justify-center">
+                <div className="my-12 mx-auto">
                     <img src="/imgs/check.svg" alt="finished" />
                 </div>
 
@@ -20,6 +21,15 @@ export default function SuccessRegisteredSection() {
                 <h3 className="text-lg lg:text-grey text-white mt-2">
                     Te rugam sa iti verifici email-ul si sa confirmi noul tau cont PanoroCRM.
                 </h3>
+            </div>
+
+            <div className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full">
+                <Link
+                    to="/login"
+                    className="bg-blue text-white px-4 py-2 rounded float-left font-bold hover:shadow-lg mt-12 w-1/2 text-center"
+                >
+                    Spre DASHBOARD
+                </Link>
             </div>
         </div>
     );
