@@ -38,40 +38,42 @@ export default function ModulesSection({ modules, setModules, setCurrentStep, se
 
             {showModal && <DiscoverModules modules={modules} setModules={setModules} setShowModal={setShowModal} />}
 
-            <form className="mt-6 bg-white w-full lg:p-0 p-6 lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
-                <div className="w-full py-6 grid lg:grid-cols-2 gap-4">
-                    {modules.virtual && <Virtual modules={modules} setModules={setModules} />}
-                    {modules.documente && <Documente modules={modules} setModules={setModules} />}
-                    {modules.statistici && <Statistici modules={modules} setModules={setModules} />}
-                    {modules.facturare && <Facturare modules={modules} setModules={setModules} />}
-                    {modules.anunturi && <Anunturi modules={modules} setModules={setModules} />}
-                    {modules.contacte && <Contacte modules={modules} setModules={setModules} />}
-                </div>
-
-                <div className="w-full mt-96">
-                    <button
-                        onClick={() => setShowModal(true)}
-                        type="button"
-                        className="bg-white my-6 border border-dashed border-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:border-blue"
-                    >
-                        Descopera mai multe module
-                    </button>
-
-                    <div className="lg:float-right my-6">
-                        <button
-                            onClick={() => setCurrentStep(RegisterStep.BUSINESS_FIELDS)}
-                            type="button"
-                            className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:shadow-lg"
-                        >
-                            <i className="fas fa-chevron-left ml-2"></i> Inapoi
-                        </button>
-
-                        <button type="submit" className="bg-blue text-white px-4 py-2 rounded font-bold hover:shadow-lg">
-                            Creeaza cont
-                        </button>
+            {!showModal && (
+                <form className="mt-6 bg-white w-full lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
+                    <div className="w-full py-6 grid lg:grid-cols-2 gap-4 ">
+                        {modules.virtual && <Virtual modules={modules} setModules={setModules} />}
+                        {modules.documente && <Documente modules={modules} setModules={setModules} />}
+                        {modules.statistici && <Statistici modules={modules} setModules={setModules} />}
+                        {modules.facturare && <Facturare modules={modules} setModules={setModules} />}
+                        {modules.anunturi && <Anunturi modules={modules} setModules={setModules} />}
+                        {modules.contacte && <Contacte modules={modules} setModules={setModules} />}
                     </div>
-                </div>
-            </form>
+
+                    <div className="w-full mt-96 lg:p-0 px-6">
+                        <button
+                            onClick={() => setShowModal(true)}
+                            type="button"
+                            className="bg-white my-6 border border-dashed border-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:border-blue"
+                        >
+                            Descopera mai multe module
+                        </button>
+
+                        <div className="lg:float-right my-6">
+                            <button
+                                onClick={() => setCurrentStep(RegisterStep.BUSINESS_FIELDS)}
+                                type="button"
+                                className="bg-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:shadow-lg"
+                            >
+                                <i className="fas fa-chevron-left ml-2"></i> Inapoi
+                            </button>
+
+                            <button type="submit" className="bg-blue text-white px-4 py-2 rounded font-bold hover:shadow-lg">
+                                Creeaza cont
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            )}
         </div>
     );
 }
