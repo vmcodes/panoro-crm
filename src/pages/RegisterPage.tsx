@@ -72,7 +72,7 @@ export default function RegisterPage() {
             handleSubmit();
             setSubmit(false);
         }
-    }, [submit]);
+    }, [submit, termenii]);
 
     return (
         <LoginBase>
