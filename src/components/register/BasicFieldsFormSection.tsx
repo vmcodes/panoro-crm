@@ -39,7 +39,7 @@ export default function BasicFieldsFormSection({
         event.preventDefault();
 
         if (termenii && JSON.parse(persona) === 1) {
-            setCurrentStep(RegisterStep.MODULES);
+            setCurrentStep(RegisterStep.BUSINESS_FIELDS);
         } else if (termenii && JSON.parse(persona) === 0) {
             setSubmit(true);
         }

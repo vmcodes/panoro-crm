@@ -57,7 +57,6 @@ export default function BusinessFieldsFormSection({
                         type="text"
                         value={companie}
                         onChange={(e) => setCompanie(e.target.value)}
-                        required
                     />
                     <i className="fas fa-store ml-2"></i>
                 </div>
@@ -70,7 +69,6 @@ export default function BusinessFieldsFormSection({
                         type="text"
                         value={anajati}
                         onChange={(e) => setAnajati(e.target.value)}
-                        required
                     />
                     <i className="fas fa-users ml-2"></i>
                 </div>
@@ -98,7 +96,6 @@ export default function BusinessFieldsFormSection({
                         pattern="[0-9]{4}-[0-9]{3}-[0-9]{2}"
                         value={telefon}
                         onChange={(e) => setTelefon(e.target.value)}
-                        required
                     />
                     <i className="fas fa-phone ml-2"></i>
                 </div>
