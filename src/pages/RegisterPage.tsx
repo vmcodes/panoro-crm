@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import LoginBase from '../components/LoginBase';
 import axios from 'axios';
+import { ModuleItem } from 'src/data/ModuleItem';
 // components
 const BasicFieldsFormSection = React.lazy(() => import('../components/register/BasicFieldsFormSection'));
 const BusinessFieldsFormSection = React.lazy(() => import('../components/register/BusinessFieldsFormSection'));
@@ -38,14 +39,7 @@ export default function RegisterPage() {
     const [angajati, setAnajati] = useState<string>('');
     const [activitate, setActivitate] = useState<string>('null');
     const [telefon, setTelefon] = useState<string>('');
-    const [modules, setModules] = useState<Modules>({
-        virtual: false,
-        documente: false,
-        statistici: false,
-        facturare: false,
-        anunturi: false,
-        contacte: false,
-    });
+    const [modules, setModules] = useState<ModuleItem[]>([]);
     const [submit, setSubmit] = useState<boolean>(false);
 
     useEffect(() => {

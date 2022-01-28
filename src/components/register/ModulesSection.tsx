@@ -1,27 +1,37 @@
 //= Functions & Modules
 // Others
-import React, { useState } from 'react';
-import { Modules, RegisterStep } from '../../pages/RegisterPage';
+import React, { useEffect, useState } from 'react';
+import { RegisterStep } from '../../pages/RegisterPage';
 import DiscoverModules from './DiscoverModules';
-import Anunturi from '../modules/Anunturi';
-import Contacte from '../modules/Contacte';
-import Documente from '../modules/Documente';
-import Facturare from '../modules/Facturare';
-import Statistici from '../modules/Statistici';
-import Virtual from '../modules/Virtual';
+import { ModuleItem } from 'src/data/ModuleItem';
+import axios from 'axios';
+import Module from './Module';
 /**
  * The modules section of register page where user can see the selected modules
  */
 
 type Props = {
-    modules: Modules;
-    setModules: React.Dispatch<React.SetStateAction<Modules>>;
+    modules: ModuleItem[];
+    setModules: React.Dispatch<React.SetStateAction<ModuleItem[]>>;
     setCurrentStep: React.Dispatch<React.SetStateAction<RegisterStep>>;
     setSubmit: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ModulesSection({ modules, setModules, setCurrentStep, setSubmit }: Props) {
     const [showModal, setShowModal] = useState<boolean>(false);
+    const [moduleItem, setModuleItem] = useState<ModuleItem[]>([]);
+
+    useEffect(() => {
+        async function getData() {
+            const res = await axios.get('/api/modules');
+
+            setModuleItem(res.data);
+        }
+
+        if (!moduleItem[0]) {
+            getData();
+        }
+    }, [moduleItem]);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -36,17 +46,14 @@ export default function ModulesSection({ modules, setModules, setCurrentStep, se
                 <h3 className="text-lg lg:text-grey text-white mt-2">Te rugam sa selectezi modulele pe care doresti sa le activezi</h3>
             </div>
 
-            {showModal && <DiscoverModules modules={modules} setModules={setModules} setShowModal={setShowModal} />}
+            {showModal && <DiscoverModules moduleItem={moduleItem} modules={modules} setModules={setModules} setShowModal={setShowModal} />}
 
             {!showModal && (
                 <form className="mt-6 bg-white w-full lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
                     <div className="w-full py-6 grid lg:grid-cols-2 gap-4 ">
-                        {modules.virtual && <Virtual modules={modules} setModules={setModules} />}
-                        {modules.documente && <Documente modules={modules} setModules={setModules} />}
-                        {modules.statistici && <Statistici modules={modules} setModules={setModules} />}
-                        {modules.facturare && <Facturare modules={modules} setModules={setModules} />}
-                        {modules.anunturi && <Anunturi modules={modules} setModules={setModules} />}
-                        {modules.contacte && <Contacte modules={modules} setModules={setModules} />}
+                        {moduleItem.map((_, index) => {
+                            return <>{modules[_.id] && <Module key={index} moduleItem={_} modules={modules} setModules={setModules} />}</>;
+                        })}
                     </div>
 
                     <div className="w-full mt-96 lg:p-0 px-6">

@@ -1,24 +1,19 @@
 //= Functions & Modules
 // Others
-import React from 'react';
-import { Modules } from 'src/pages/RegisterPage';
-import Anunturi from '../modules/Anunturi';
-import Contacte from '../modules/Contacte';
-import Documente from '../modules/Documente';
-import Facturare from '../modules/Facturare';
-import Statistici from '../modules/Statistici';
-import Virtual from '../modules/Virtual';
+import React, { useEffect, useState } from 'react';
+import { ModuleItem } from 'src/data/ModuleItem';
+import Module from './Module';
 /**
  * The discover modules component where the user can add or remove modules
  */
 type Props = {
-    modules: Modules;
-    setModules: React.Dispatch<React.SetStateAction<Modules>>;
+    modules: ModuleItem[];
+    moduleItem: ModuleItem[];
+    setModules: React.Dispatch<React.SetStateAction<ModuleItem[]>>;
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function DiscoverModules({ modules, setModules, setShowModal }: Props) {
-    // TODO
+export default function DiscoverModules({ modules, moduleItem, setModules, setShowModal }: Props) {
     return (
         <div className="modal fade fixed top-0 left-0 w-full outline-none overflow-x-hidden overflow-y-scroll h-screen" aria-hidden="true">
             <div className="modal-dialog modal-fullscreen relative w-auto pointer-events-none">
@@ -45,13 +40,10 @@ export default function DiscoverModules({ modules, setModules, setShowModal }: P
                         </button>
                     </div>
 
-                    <div className="lg:w-full w-screen bg-white rounded-tr-lg rounded-tl-lg grid lg:grid-cols-3 gap-2 flex flex-shrink-0 items-center justify-between lg:px-6 py-6">
-                        <Virtual modules={modules} setModules={setModules} />
-                        <Documente modules={modules} setModules={setModules} />
-                        <Statistici modules={modules} setModules={setModules} />
-                        <Facturare modules={modules} setModules={setModules} />
-                        <Anunturi modules={modules} setModules={setModules} />
-                        <Contacte modules={modules} setModules={setModules} />
+                    <div className="lg:w-full min-h-screen w-screen bg-white rounded-tr-lg rounded-tl-lg grid lg:grid-cols-3 gap-2 flex flex-shrink-0 items-center justify-between lg:px-6 py-6">
+                        {moduleItem?.map((_, index) => {
+                            return <Module key={index} moduleItem={_} modules={modules} setModules={setModules} />;
+                        })}
                     </div>
                     <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-6 rounded-b-md bg-white">
                         <button

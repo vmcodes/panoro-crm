@@ -39,7 +39,7 @@ export default function BasicFieldsFormSection({
         event.preventDefault();
 
         if (termenii && JSON.parse(persona) === 1) {
-            setCurrentStep(RegisterStep.BUSINESS_FIELDS);
+            setCurrentStep(RegisterStep.MODULES);
         } else if (termenii && JSON.parse(persona) === 0) {
             setSubmit(true);
         }
@@ -67,7 +67,6 @@ export default function BasicFieldsFormSection({
                         type="text"
                         value={nume}
                         onChange={(e) => setNume(e.target.value)}
-                        required
                     />
                     <i className="far fa-user ml-2"></i>
                 </div>
@@ -80,7 +79,6 @@ export default function BasicFieldsFormSection({
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        required
                     />
                     <i className="far fa-envelope-open ml-2"></i>
                 </div>
@@ -94,7 +92,6 @@ export default function BasicFieldsFormSection({
                         minLength={6}
                         value={parola}
                         onChange={(e) => setParola(e.target.value)}
-                        required
                     />
                     <i className="fas fa-lock ml-2"></i>
                 </div>
@@ -104,7 +101,6 @@ export default function BasicFieldsFormSection({
                     <select
                         value={persona}
                         onChange={(e) => setPersona(e.target.value)}
-                        required
                         className="mt-2 pb-2 bg-white border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
                     >
                         <option value="null">Selecteaza persoana</option>
