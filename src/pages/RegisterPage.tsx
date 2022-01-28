@@ -48,7 +48,7 @@ export default function RegisterPage() {
                 username: nume,
                 password: parola,
                 email: email,
-                modules: [modules],
+                modules: modules,
                 accountType: JSON.parse(persona),
                 businessActivity: JSON.parse(activitate),
                 businessName: companie,
