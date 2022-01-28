@@ -90,12 +90,12 @@ export default function BusinessFieldsFormSection({
                 </div>
 
                 <div className="w-full py-4">
-                    <label className="text-grey">Telefon (0700-000-000)</label>
+                    <label className="text-grey">Telefon (0700-000-00)</label>
                     <br />
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
                         type="tel"
-                        pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
+                        pattern="[0-9]{4}-[0-9]{3}-[0-9]{2}"
                         value={telefon}
                         onChange={(e) => setTelefon(e.target.value)}
                         required
