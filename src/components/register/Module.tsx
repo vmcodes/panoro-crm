@@ -76,18 +76,9 @@ export default function Module({ modules, setModules, moduleItem }: Props) {
 
                             {modules[moduleItem.id] ? (
                                 <div className="h-24 w-24 float-right">
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            setModules({
-                                                ...modules,
-                                                [moduleItem.id]: false,
-                                            })
-                                        }
-                                        className="z-10 border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded-md font-bold float-right m-6"
-                                    >
+                                    <span className="z-10 border border-slate hover:border-grey bg-white text-grey px-4 py-2 rounded-md font-bold float-right m-6">
                                         <i className="fas fa-times"></i>
-                                    </button>
+                                    </span>
                                 </div>
                             ) : (
                                 <div className="h-24 w-24 float-right"></div>
@@ -96,6 +87,7 @@ export default function Module({ modules, setModules, moduleItem }: Props) {
                     </div>
                 </button>
             </div>
+            <span className="hidden bg-lightblue bg-purple bg-lightpurple bg-lightred bg-lightgreen bg-lightyellow"></span>
         </div>
     );
 }

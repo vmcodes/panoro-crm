@@ -89,7 +89,6 @@ export default function BasicFieldsFormSection({
                     <input
                         className="pt-3 w-11/12 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:border-b-blue rounded-b-none focus:rounded-none focus:outline-none rounded-md ring-grey"
                         type="password"
-                        minLength={6}
                         value={parola}
                         onChange={(e) => setParola(e.target.value)}
                     />

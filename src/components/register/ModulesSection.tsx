@@ -50,20 +50,22 @@ export default function ModulesSection({ modules, setModules, setCurrentStep, se
 
             {!showModal && (
                 <form className="mt-6 bg-white w-full lg:rounded-none rounded-xl h-full" onSubmit={(e) => handleSubmit(e)}>
-                    <div className="w-full py-6 grid lg:grid-cols-2 gap-4 ">
+                    <div className="w-full py-6 grid lg:grid-cols-2 gap-4">
                         {moduleItem.map((_, index) => {
                             return <>{modules[_.id] && <Module key={index} moduleItem={_} modules={modules} setModules={setModules} />}</>;
                         })}
                     </div>
 
-                    <div className="w-full mt-96 lg:p-0 px-6">
-                        <button
-                            onClick={() => setShowModal(true)}
-                            type="button"
-                            className="bg-white my-6 border border-dashed border-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:border-blue"
-                        >
-                            Descopera mai multe module
-                        </button>
+                    <div className="w-full mt-80 lg:p-0 px-6">
+                        <div className="lg:float-left my-6">
+                            <button
+                                onClick={() => setShowModal(true)}
+                                type="button"
+                                className="bg-white border border-dashed border-lightblue text-blue px-4 py-2 rounded mr-2 font-bold hover:border-blue"
+                            >
+                                Descopera mai multe module
+                            </button>
+                        </div>
 
                         <div className="lg:float-right my-6">
                             <button
