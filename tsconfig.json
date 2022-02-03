@@ -4,7 +4,6 @@
         "target": "ES2015",
         "jsx": "react-jsx",
         "allowJs": false,
-        "outDir": "./dist",
         "rootDir": ".",
         "baseUrl": ".",
         "module": "esnext",
