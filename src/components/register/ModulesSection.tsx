@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import { RegisterStep } from '../../pages/RegisterPage';
 import DiscoverModules from './DiscoverModules';
-import { ModuleItem } from 'src/data/ModuleItem';
+import { ModuleItem } from '../../data/ModuleItem';
 import Module from './Module';
-import { MODULES } from 'src/data/Modules';
+import { MODULES } from '../../data/Modules';
 /**
  * The modules section of register page where user can see the selected modules
  */

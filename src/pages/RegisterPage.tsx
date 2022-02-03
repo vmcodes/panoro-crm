@@ -2,8 +2,7 @@
 // Others
 import React, { useEffect, useState } from 'react';
 import LoginBase from '../components/LoginBase';
-import axios from 'axios';
-import { ModuleItem } from 'src/data/ModuleItem';
+import { ModuleItem } from '../data/ModuleItem';
 // components
 const BasicFieldsFormSection = React.lazy(() => import('../components/register/BasicFieldsFormSection'));
 const BusinessFieldsFormSection = React.lazy(() => import('../components/register/BusinessFieldsFormSection'));

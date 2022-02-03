@@ -1,7 +1,7 @@
 //= Functions & Modules
 // Others
 import React from 'react';
-import { ModuleItem } from 'src/data/ModuleItem';
+import { ModuleItem } from '../../data/ModuleItem';
 import Module from './Module';
 /**
  * The discover modules component where the user can add or remove modules
