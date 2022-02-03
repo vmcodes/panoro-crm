@@ -1,5 +1,6 @@
 module.exports = {
-    content: ['./src/**/*.{ejs,tsx}'],
+    content: ['./src/**/*.{tsx}'],
+    purge: ['./src/**/*.{tsx}', './public/index.html'],
     theme: {
         colors: {
             white: '#ffffff',

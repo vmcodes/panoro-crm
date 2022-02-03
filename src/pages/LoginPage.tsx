@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LoginBase from '../components/LoginBase';
-import axios from 'axios';
 /**
  * The login page
  */
@@ -13,9 +12,6 @@ export default function LoginPage() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-
-        const res = await axios.post('/api/users/login', { username: email, password: password });
-        alert(res?.data);
     }
 
     return (
@@ -40,7 +36,6 @@ export default function LoginPage() {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            required
                         />
                         <i className="far fa-envelope-open ml-2"></i>
                     </div>
@@ -54,7 +49,6 @@ export default function LoginPage() {
                             minLength={6}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            required
                         />
                         <i className="fas fa-lock ml-2"></i>
                     </div>

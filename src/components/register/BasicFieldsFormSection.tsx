@@ -101,6 +101,7 @@ export default function BasicFieldsFormSection({
                         value={persona}
                         onChange={(e) => setPersona(e.target.value)}
                         className="mt-2 pb-2 bg-white border border-grey text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"
+                        required
                     >
                         <option value="null">Selecteaza persoana</option>
                         <option value="0">Persoana fizica</option>

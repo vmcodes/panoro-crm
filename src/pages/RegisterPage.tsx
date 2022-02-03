@@ -44,22 +44,7 @@ export default function RegisterPage() {
 
     useEffect(() => {
         async function handleSubmit() {
-            const res = await axios.post('/api/users/register', {
-                username: nume,
-                password: parola,
-                email: email,
-                modules: modules,
-                accountType: JSON.parse(persona),
-                businessActivity: JSON.parse(activitate),
-                businessName: companie,
-                businessPhoneNumber: telefon,
-            });
-
-            if (res?.data) {
-                alert(res?.data);
-
-                setCurrentStep(RegisterStep.SUCCESS);
-            }
+            setCurrentStep(RegisterStep.SUCCESS);
         }
 
         if (submit && termenii) {

@@ -1,8 +1,9 @@
 //= Functions & Modules
 // Others
 import ReactDOM from 'react-dom';
-import React from 'react';
-
+//= Style & Assets
+// Own
+import './index.css';
 //= React components
 // Own
 import App from './App';

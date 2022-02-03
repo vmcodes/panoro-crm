@@ -8,10 +8,6 @@ import { Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import BackToTop from './components/BackToTop';
 
-//= Style & Assets
-// Own
-import './styles/global.scss';
-
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const RecoverPasswordPage = React.lazy(() => import('./pages/RecoverPasswordPage'));
 const RegisterPage = React.lazy(() => import('./pages/RegisterPage'));

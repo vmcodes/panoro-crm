@@ -1,6 +1,6 @@
 //= Functions & Modules
 // Others
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ModuleItem } from 'src/data/ModuleItem';
 import Module from './Module';
 /**

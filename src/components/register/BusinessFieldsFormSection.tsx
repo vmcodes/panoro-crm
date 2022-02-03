@@ -32,9 +32,7 @@ export default function BusinessFieldsFormSection({
     async function handleSubmit(event) {
         event.preventDefault();
 
-        if (JSON.parse(activitate) !== null) {
-            setCurrentStep(RegisterStep.MODULES);
-        }
+        setCurrentStep(RegisterStep.MODULES);
     }
 
     return (

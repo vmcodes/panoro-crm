@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { RegisterStep } from '../../pages/RegisterPage';
 import DiscoverModules from './DiscoverModules';
 import { ModuleItem } from 'src/data/ModuleItem';
-import axios from 'axios';
 import Module from './Module';
+import { MODULES } from 'src/data/Modules';
 /**
  * The modules section of register page where user can see the selected modules
  */
@@ -23,9 +23,7 @@ export default function ModulesSection({ modules, setModules, setCurrentStep, se
 
     useEffect(() => {
         async function getData() {
-            const res = await axios.get('/api/modules');
-
-            setModuleItem(res.data);
+            setModuleItem(MODULES);
         }
 
         if (!moduleItem[0]) {

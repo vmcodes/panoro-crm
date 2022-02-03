@@ -1,21 +1,28 @@
 {
-    "include": ["src", "dummy_api_server"],
+    "include": ["src"],
     "compilerOptions": {
         "target": "ES2015",
-        "jsx": "react",
+        "jsx": "react-jsx",
         "allowJs": false,
         "outDir": "./dist",
         "rootDir": ".",
         "baseUrl": ".",
-        "module": "CommonJS",
+        "module": "esnext",
         "moduleResolution": "Node",
         "experimentalDecorators": true,
         "declaration": true,
         "sourceMap": true,
-        "skipLibCheck": true /* Skip type checking of declaration files. */,
+        "skipLibCheck": true,
         "esModuleInterop": true,
-        "paths": {},
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "noImplicitAny": false
     },
     "references": []
 }

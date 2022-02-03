@@ -2,7 +2,6 @@
 // Others
 import React from 'react';
 import { ModuleItem } from 'src/data/ModuleItem';
-import { Modules } from 'src/pages/RegisterPage';
 
 //= Structures & Data
 // Own
