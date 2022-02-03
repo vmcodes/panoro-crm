@@ -55,7 +55,7 @@ export default function LoginPage() {
 
                     <div className="w-full py-6">
                         <input
-                            className="mb-3 pt-3 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey rounded-none focus:outline-none rounded-md ring-grey"
+                            className="mb-3 pt-3 px-4 border border-t-0 border-l-0 border-r-0 border-b-grey focus:outline-none rounded-md ring-grey"
                             type="radio"
                         />
                         <label className="text-md font-bold ml-2">Nu ma deconecta!</label>
